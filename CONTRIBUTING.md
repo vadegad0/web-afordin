@@ -69,4 +69,4 @@ To ensure your issue is handled efficiently:
 
 ---
 
-Thank you for your interest and contribution to Portfolios Dev. Your help is very valuable!
+Thank you for your interest and contribution to Afordin. Your help is very valuable!
