@@ -1,1 +1,5 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@theme {
+  --font-manrope: 'Manrope', sans-serif;
+  --font-aeonik: 'Aeonik', sans-serif;
+}

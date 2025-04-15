@@ -1,10 +1,10 @@
 ---
 type Props = {
-    href: string;
+  href: string
 }
-const { href } = Astro.props;
+const { href } = Astro.props
 ---
 
-<a href={href} target="_blank" class="px-10 py-5 rounded-full bg-white text-black">
+<a href={href} target="_blank" class="rounded-full bg-white px-10 py-5 text-black">
   <slot />
 </a>

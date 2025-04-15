@@ -1,53 +1,52 @@
 ---
-import '../index.css'; 
+import '../index.css'
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Afordin Website</title>
-	</head>
-	<body>
-		<div class="w-full flex flex-col items-center text-white font-manrope">
-			<slot />
-		</div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Afordin Website</title>
+  </head>
+  <body>
+    <div class="font-manrope flex w-full flex-col items-center text-white">
+      <slot />
+    </div>
+  </body>
 </html>
 
 <style is:global>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 
-	@font-face {
-    font-family: "Aeonik";
-    src: url("/fonts/Aeonik-Bold.otf") format("opentype");
+  @font-face {
+    font-family: 'Aeonik';
+    src: url('/fonts/Aeonik-Bold.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Manrope";
-    src: url("/fonts/manrope-latin-400-normal.woff2") format("woff2");
+    font-family: 'Manrope';
+    src: url('/fonts/manrope-latin-400-normal.woff2') format('woff2');
     font-weight: regular;
     font-style: normal;
     font-display: swap;
   }
 
   @font-face {
-    font-family: "Manrope";
-    src: url("/fonts/manrope-latin-700-normal.woff2") format("woff2");
+    font-family: 'Manrope';
+    src: url('/fonts/manrope-latin-700-normal.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
   }
-
 </style>
