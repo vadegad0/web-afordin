@@ -38,7 +38,7 @@ To propose a new feature:
 
 ## How to Fork
 
-To contribute to Portfolios Dev, first you need to fork the repository:
+To contribute to Afordin, first you need to fork the repository:
 
 1. **Go to the Repository on GitHub**: Visit [Web Afordin](https://github.com/Afordin/web-afordin).
 2. **Click Fork**: In the top right corner of the repository page, click the **Fork** button. This creates a copy of the repository in your GitHub account.
