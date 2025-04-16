@@ -6,11 +6,11 @@
     "astro": "astro",
     "dev": "astro dev",
     "preview": "astro preview",
-    "lint": "eslint --cache src/**/*.{astro,ts}",
-    "lint:fix": "eslint --cache src/**/*.{astro,ts} --fix",
+    "lint": "eslint --cache \"src/**/*.{astro,ts}\"",
+    "lint:fix": "eslint --cache \"src/**/*.{astro,ts}\" --fix",
     "build": "pnpm check && astro build",
     "check": "astro check --tsconfig tsconfig.json",
-    "format": "prettier --cache --write ./**/*.{js,mjs,css,ts,astro,json,svg,yaml,yml}",
+    "format": "prettier --cache --write \"./**/*.{js,mjs,css,ts,astro,json,svg,yaml,yml}\"",
     "prepare": "simple-git-hooks"
   },
   "simple-git-hooks": {
