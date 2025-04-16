@@ -1,13 +1,14 @@
-import love from 'eslint-config-love'
-import astro from 'eslint-plugin-astro'
+import configLove from 'eslint-config-love'
+import configPrettier from 'eslint-config-prettier'
+import pluginAstro from 'eslint-plugin-astro'
 
 export default [
   { ignores: ['dist/'] },
-  ...astro.configs['flat/recommended'],
-  ...astro.configs['flat/jsx-a11y-recommended'],
+  ...pluginAstro.configs['flat/recommended'],
+  ...pluginAstro.configs['flat/jsx-a11y-recommended'],
   {
     files: ['**/*.{js,mjs}', '**/*.ts'],
-    ...love,
+    ...configLove,
     rules: {
       '@typescript-eslint/unbound-method': 'off',
       '@typescript-eslint/no-magic-numbers': 'off',
@@ -18,4 +19,5 @@ export default [
       'no-console': ['warn', { allow: ['warn', 'error'] }],
     },
   },
+  configPrettier,
 ]
