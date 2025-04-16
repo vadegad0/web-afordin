@@ -1,9 +1,12 @@
+import globals from 'globals'
 import configLove from 'eslint-config-love'
 import configPrettier from 'eslint-config-prettier'
 import pluginAstro from 'eslint-plugin-astro'
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
   { ignores: ['dist/'] },
+  { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   ...pluginAstro.configs['flat/recommended'],
   ...pluginAstro.configs['flat/jsx-a11y-recommended'],
   {
