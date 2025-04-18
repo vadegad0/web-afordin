@@ -11,19 +11,19 @@ const col3 = users.filter((_, i) => i % 3 === 2)
 <section
   class="relative flex min-h-screen w-full flex-col items-center justify-center gap-11 overflow-hidden bg-black text-white"
 >
-  <!-- Máscara como fondo degradado superior e inferior -->
+  <!-- Mask as gradient background at top and bottom -->
   <div
     class="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b from-transparent via-black/60 to-black"
   >
   </div>
 
-  <div class="z-10 flex flex-col items-center gap-8 px-4 text-center">
+  <hgroup class="z-10 flex flex-col items-center gap-8 px-4 text-center">
     <h2 class="text-5xl font-bold drop-shadow-md">Comunidad</h2>
     <p class="text-lg md:text-xl">Conecta, colabora y encuentra apoyo en cada paso de tu camino.</p>
-  </div>
+  </hgroup>
 
-  <!-- Columnas -->
-  <div class="z-10 mt-6 flex w-full justify-center gap-6 overflow-hidden px-8">
+  <!-- Columns -->
+  <article class="z-10 mt-6 flex w-full justify-center gap-6 overflow-hidden px-8">
     <div class="scroll-column scroll-down flex flex-col gap-4">
       {col1.map((user, i) => <UserCard user={user} key={`col1-${i}`} />)}
     </div>
@@ -33,8 +33,8 @@ const col3 = users.filter((_, i) => i % 3 === 2)
     <div class="scroll-column scroll-down flex flex-col gap-4">
       {col3.map((user, i) => <UserCard user={user} key={`col3-${i}`} />)}
     </div>
-  </div>
-  <div class="z-20 mt-12">
+  </article>
+  <article class="z-10">
     <Button href="#conocenos">Conócenos</Button>
-  </div>
+  </article>
 </section>
