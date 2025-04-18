@@ -1,0 +1,31 @@
+---
+const { user } = Astro.props
+
+// Determina si es un card "simple" (solo nombre y fondo blanco)
+const isSimple = user.avatar.includes('avatar2') || user.avatar.includes('avatar4') || user.avatar.includes('avatar9')
+---
+
+<div
+  class={`rounded-xl w-64 min-h-[140px] overflow-hidden ${
+    isSimple
+      ? 'bg-white text-black flex items-center justify-between gap-2 p-4'
+      : 'bg-black border border-white/10 p-4 text-white'
+  }`}
+>
+  <div class="flex items-center gap-3">
+    <img src={user.avatar} alt="avatar" class="h-10 w-10 rounded-full object-cover" />
+    <div class="flex flex-col">
+      <p class="font-bold">{user.name}</p>
+      <p class="text-sm opacity-70">@{user.username}</p>
+    </div>
+  </div>
+
+  {
+    isSimple ? null : (
+      <>
+        <div class="my-3 border-t border-dashed border-white/30" />
+        <p class="text-sm leading-snug">{user.message}</p>
+      </>
+    )
+  }
+</div>

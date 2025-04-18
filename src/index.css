@@ -3,3 +3,32 @@
   --font-manrope: 'Manrope', sans-serif;
   --font-aeonik: 'Aeonik', sans-serif;
 }
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(50%);
+  }
+}
+
+.scroll-up {
+  animation: scroll-up 40s linear infinite;
+}
+
+.scroll-down {
+  animation: scroll-down 40s linear infinite;
+}
+
+.mask-gradient {
+  background: linear-gradient(to bottom, black 0%, transparent 20%, transparent 80%, black 100%);
+}

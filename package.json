@@ -17,7 +17,7 @@
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*": [
+    "./**/*.{js,mjs,css,ts,astro,json,svg,yaml,yml}": [
       "pnpm lint:fix",
       "pnpm format"
     ]
