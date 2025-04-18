@@ -9,3 +9,32 @@
   --text-hero-paragraph: clamp(1.25rem, 2vw, 1.875rem);
   --text-hero-paragraph--line-height: 1.2;
 }
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scroll-down {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(50%);
+  }
+}
+
+.scroll-up {
+  animation: scroll-up 40s linear infinite;
+}
+
+.scroll-down {
+  animation: scroll-down 40s linear infinite;
+}
+
+.mask-gradient {
+  background: linear-gradient(to bottom, black 0%, transparent 20%, transparent 80%, black 100%);
+}
