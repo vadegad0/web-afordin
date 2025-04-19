@@ -9,6 +9,7 @@
   --text-hero-paragraph: clamp(1.25rem, 2vw, 1.875rem);
   --text-hero-paragraph--line-height: 1.2;
 }
+
 @keyframes scroll-up {
   0% {
     transform: translateY(0%);
@@ -37,4 +38,8 @@
 
 .mask-gradient {
   background: linear-gradient(to bottom, black 0%, transparent 20%, transparent 80%, black 100%);
+}
+
+.scroll-column {
+  will-change: transform;
 }
