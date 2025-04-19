@@ -83,7 +83,7 @@ If you want to contribute to this project, you can do so by reading the [Contrib
 
 **Thanks to all the contributors who have made this project possible!**
 
-[![Contributors](https://contrib.rocks/image?repo=Afordin/web-afordin&)](https://github.com/Afordin/web-afordin&/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=Afordin/web-afordin&)](https://github.com/Afordin/web-afordin/graphs/contributors)
 
 ## 🛠️ Stack
 
