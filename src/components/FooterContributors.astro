@@ -1,0 +1,20 @@
+---
+export interface Contributor {
+  login: string
+  avatar_url: string
+  html_url: string
+}
+const { contributors } = Astro.props
+---
+
+<div class="group flex h-full w-fit flex-wrap items-center justify-end -space-x-3 hover:space-x-0">
+  {
+    contributors.map((contributor: Contributor) => {
+      return (
+        <a href={contributor.html_url} class="transform transition-all duration-500 ease-in-out">
+          <img src={contributor.avatar_url} alt={contributor.login} class="h-11 w-11 rounded-full shadow-inner" />
+        </a>
+      )
+    })
+  }
+</div>

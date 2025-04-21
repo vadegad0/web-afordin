@@ -1,5 +1,10 @@
 ---
+import FooterContributors from './FooterContributors.astro'
+import type { Contributor } from './FooterContributors.astro'
+import { designersData } from '@/data/designersData'
 
+const response = await fetch(`https://api.github.com/repos/Afordin/web-afordin/contributors`)
+const dataDevs: Array<Contributor> = await response.json()
 ---
 
 <footer class="flex w-screen justify-center bg-[#271021] py-24">
@@ -77,79 +82,17 @@
       <div class="flex flex-col gap-6">
         <div class="contend-end flex flex-col items-end gap-4">
           <h3 class="text-xl">Diseñadores</h3>
-          <div class="group flex h-full w-fit flex-wrap items-center justify-end -space-x-3 hover:space-x-0">
-            <a href="/" class="transform transition-all duration-500 ease-in-out">
-              <img
-                src="https://media.licdn.com/dms/image/v2/D4E03AQErh-lfnu5Mgg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695140905031?e=1750896000&v=beta&t=BAVZKELh0hW4tP3CzProM_erqwwqkApYv-hIsQYnA6E"
-                alt="designer"
-                class="h-11 w-11 rounded-full shadow-inner"
-              />
-            </a>
-            <a href="/" class="transform transition-all duration-500 ease-in-out">
-              <img
-                src="https://media.licdn.com/dms/image/v2/D4D03AQH42bPiTJ1PmA/profile-displayphoto-shrink_800_800/B4DZVzKNaPHYAc-/0/1741393811853?e=1750896000&v=beta&t=nz8XB3GKuBNYR0QbAlW8pyIOzgb7Hb7DqMzKWc1UZmY"
-                alt="designer"
-                class="h-11 w-11 rounded-full shadow-inner"
-              />
-            </a>
-            <a href="/" class="transform transition-all duration-500 ease-in-out">
-              <img
-                src="https://media.licdn.com/dms/image/v2/D4E03AQErh-lfnu5Mgg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695140905031?e=1750896000&v=beta&t=BAVZKELh0hW4tP3CzProM_erqwwqkApYv-hIsQYnA6E"
-                alt="designer"
-                class="h-11 w-11 rounded-full shadow-inner"
-              />
-            </a>
-          </div>
+          <FooterContributors contributors={designersData} />
         </div>
         <div class="contend-end flex flex-col items-end gap-4">
           <h3 class="text-xl">Desarrolladores</h3>
-          <div class="group flex h-full w-fit flex-wrap items-center justify-end -space-x-3 hover:space-x-0">
-            <a href="/" class="transform transition-all duration-500 ease-in-out">
-              <img
-                src="https://media.licdn.com/dms/image/v2/D4E03AQErh-lfnu5Mgg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695140905031?e=1750896000&v=beta&t=BAVZKELh0hW4tP3CzProM_erqwwqkApYv-hIsQYnA6E"
-                alt="designer"
-                class="h-11 w-11 rounded-full shadow-inner"
-              />
-            </a>
-            <a href="/" class="transform transition-all duration-500 ease-in-out">
-              <img
-                src="https://media.licdn.com/dms/image/v2/D4D03AQH42bPiTJ1PmA/profile-displayphoto-shrink_800_800/B4DZVzKNaPHYAc-/0/1741393811853?e=1750896000&v=beta&t=nz8XB3GKuBNYR0QbAlW8pyIOzgb7Hb7DqMzKWc1UZmY"
-                alt="designer"
-                class="h-11 w-11 rounded-full shadow-inner"
-              />
-            </a>
-            <a href="/" class="transform transition-all duration-500 ease-in-out">
-              <img
-                src="https://media.licdn.com/dms/image/v2/D4E03AQErh-lfnu5Mgg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695140905031?e=1750896000&v=beta&t=BAVZKELh0hW4tP3CzProM_erqwwqkApYv-hIsQYnA6E"
-                alt="designer"
-                class="h-11 w-11 rounded-full shadow-inner"
-              />
-            </a>
-          </div>
+          <FooterContributors contributors={dataDevs} />
         </div>
         <div class="contend-end flex flex-col items-end gap-4">
           <h3 class="text-xl">Vibers</h3>
           <div class="group flex h-full w-fit flex-wrap items-center justify-end -space-x-3 hover:space-x-0">
             <a href="/" class="transform transition-all duration-500 ease-in-out">
-              <img
-                src="https://media.licdn.com/dms/image/v2/D4E03AQErh-lfnu5Mgg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695140905031?e=1750896000&v=beta&t=BAVZKELh0hW4tP3CzProM_erqwwqkApYv-hIsQYnA6E"
-                alt="designer"
-                class="h-11 w-11 rounded-full shadow-inner"
-              />
-            </a>
-            <a href="/" class="transform transition-all duration-500 ease-in-out">
-              <img
-                src="https://media.licdn.com/dms/image/v2/D4D03AQH42bPiTJ1PmA/profile-displayphoto-shrink_800_800/B4DZVzKNaPHYAc-/0/1741393811853?e=1750896000&v=beta&t=nz8XB3GKuBNYR0QbAlW8pyIOzgb7Hb7DqMzKWc1UZmY"
-                alt="designer"
-                class="h-11 w-11 rounded-full shadow-inner"
-              />
-            </a>
-            <a href="/" class="transform transition-all duration-500 ease-in-out">
-              <img
-                src="https://media.licdn.com/dms/image/v2/D4E03AQErh-lfnu5Mgg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695140905031?e=1750896000&v=beta&t=BAVZKELh0hW4tP3CzProM_erqwwqkApYv-hIsQYnA6E"
-                alt="designer"
-                class="h-11 w-11 rounded-full shadow-inner"
-              />
+              <img src="./avatar/ema-avatar.jpg" alt="designer" class="h-11 w-11 rounded-full shadow-inner" />
             </a>
           </div>
         </div>
