@@ -1,5 +1,5 @@
 ---
-import Button from '@/components/ui/Button.astro'
+import { buttonStyles } from './ui/button.styles'
 ---
 
 <section
@@ -16,7 +16,7 @@ import Button from '@/components/ui/Button.astro'
     </h1>
     <p class="text-hero-paragraph">El conocimiento se multiplica cuando lo compartimos</p>
   </hgroup>
-  <Button href="https://lenguajehtml.com/html/semantica/etiqueta-html-h1/">Crece compartiendo</Button>
+  <a class={buttonStyles} href="https://lenguajehtml.com/html/semantica/etiqueta-html-h1/">Crece compartiendo</a>
 </section>
 <style>
   section {
