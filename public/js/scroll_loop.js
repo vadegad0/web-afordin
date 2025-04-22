@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.scroll-column').forEach((column) => {
     const direction = column.dataset.direction || 'up'
     const isUp = direction === 'up'
-    const speed = 0.4
+    const speed = 0.25
     let offset = 0
 
     const computedStyle = window.getComputedStyle(column)
