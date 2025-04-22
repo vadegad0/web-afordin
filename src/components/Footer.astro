@@ -15,7 +15,7 @@ const dataDevs: Array<Contributor> = await response.json()
   <div class="flex w-full max-w-7xl py-4">
     <div class="flex w-1/2 flex-col gap-[36px] border-r-2 border-[#989898] pr-14">
       <img src="./svg/afordin.svg" alt="afordin" class="h-[33px] w-[218px]" />
-      <ul class="flex flex-col gap-3 text-xl">
+      <ul class="flex flex-col gap-3 text-lg">
         <li><a href="#inicio" class="hover:text-[#BF4D73]">Inicio</a></li>
         <li><a href="#nuestros-valores" class="hover:text-[#BF4D73]">Nuestros valores</a></li>
         <li><a href="#sobre-nosotros" class="hover:text-[#BF4D73]">Sobre nosotros</a></li>
@@ -25,7 +25,7 @@ const dataDevs: Array<Contributor> = await response.json()
       </ul>
       <div class="flex flex-col gap-2">
         <p class="text-sm">
-          Designed and developed by
+          Diseñado y desarrollado por
           <a
             href="https://discord.com/invite/comuafor"
             class="relative font-semibold text-white no-underline underline-offset-4 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 after:ease-in-out after:content-[''] hover:after:w-full"
@@ -84,18 +84,18 @@ const dataDevs: Array<Contributor> = await response.json()
       </div>
     </div>
     <div class="flex w-1/2 flex-col gap-8 pl-14 text-right">
-      <h2 class="text-2xl">¿Quiénes contribuyeron?</h2>
+      <h2 class="text-xl">¿Quiénes contribuyeron?</h2>
       <div class="flex flex-col gap-6">
         <div class="contend-end flex flex-col items-end gap-4">
-          <h3 class="text-xl">Diseñadores</h3>
+          <h3 class="text-lg">Diseñadores</h3>
           <FooterDesignersContributors contributors={designersData} />
         </div>
         <div class="contend-end flex flex-col items-end gap-4">
-          <h3 class="text-xl">Desarrolladores</h3>
+          <h3 class="text-lg">Desarrolladores</h3>
           <FooterContributors contributors={dataDevs} />
         </div>
         <div class="contend-end flex flex-col items-end gap-4">
-          <h3 class="text-xl">Vibers</h3>
+          <h3 class="text-lg">Vibers</h3>
           <div class="flex h-full w-fit flex-wrap items-center justify-end -space-x-3 hover:space-x-0">
             <a
               href="https://www.linkedin.com/in/saramonrod/"
