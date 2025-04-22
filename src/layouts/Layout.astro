@@ -1,5 +1,8 @@
 ---
-import '../index.css'
+import { Font } from 'astro:assets'
+
+import SquarePattern from '@/components/SquarePattern.astro'
+import '@/index.css'
 ---
 
 <!doctype html>
@@ -10,41 +13,22 @@ import '../index.css'
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Afordin Website</title>
+
+    <Font cssVariable="--font-manrope" preload />
+    <link rel="preload" href="/fonts/aeonik-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
   </head>
-  <body class="bg-primary">
-    <div class="font-manrope flex w-full flex-col items-center text-white">
+  <body class="relative">
+    <SquarePattern />
+    <div class="flex w-full flex-col items-center bg-[var(--color-primary)] text-white">
       <slot />
     </div>
   </body>
 </html>
 
 <style is:global>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-
   @font-face {
-    font-family: 'Aeonik';
-    src: url('/fonts/Aeonik-Bold.otf') format('opentype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Manrope';
-    src: url('/fonts/manrope-latin-400-normal.woff2') format('woff2');
-    font-weight: regular;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Manrope';
-    src: url('/fonts/manrope-latin-700-normal.woff2') format('woff2');
+    font-family: Aeonik;
+    src: url('/fonts/aeonik-bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;

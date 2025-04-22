@@ -6,25 +6,41 @@
     "astro": "astro",
     "dev": "astro dev",
     "preview": "astro preview",
-    "lint": "eslint src/**/*.{astro,ts}",
+    "lint": "eslint --cache \"src/**/*.{astro,ts}\"",
+    "lint:fix": "eslint --cache \"src/**/*.{astro,ts}\" --fix",
     "build": "pnpm check && astro build",
     "check": "astro check --tsconfig tsconfig.json",
-    "format": "prettier --write src/**/*.{astro,css,json,ts}"
+    "format": "prettier --cache --write \"./**/*.{js,mjs,css,ts,astro,json,svg,yaml,yml}\"",
+    "prepare": "simple-git-hooks"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "./**/*.{js,mjs,css,ts,astro,json,svg,yaml,yml}": [
+      "pnpm lint:fix",
+      "pnpm format"
+    ]
   },
   "dependencies": {
-    "astro": "^5.7.0"
+    "astro": "5.7.4"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.4",
     "@tailwindcss/vite": "4.1.4",
-    "@typescript-eslint/eslint-plugin": "8.30.1",
-    "@typescript-eslint/parser": "8.30.1",
-    "eslint": "9.24.0",
+    "@typescript-eslint/eslint-plugin": "8.31.0",
+    "@typescript-eslint/parser": "8.31.0",
+    "eslint": "9.25.1",
     "eslint-config-love": "119.0.0",
+    "eslint-config-prettier": "10.1.2",
     "eslint-plugin-astro": "1.3.1",
+    "eslint-plugin-jsx-a11y": "6.10.2",
+    "globals": "16.0.0",
+    "lint-staged": "15.5.1",
     "prettier": "3.5.3",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.6.11",
+    "simple-git-hooks": "2.12.1",
     "tailwindcss": "4.1.4"
   }
 }
