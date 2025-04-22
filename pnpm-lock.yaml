@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       astro:
-        specifier: ^5.7.4
+        specifier: 5.7.4
         version: 5.7.4(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.40.0)(typescript@5.8.3)(yaml@2.7.1)
     devDependencies:
       '@astrojs/check':
