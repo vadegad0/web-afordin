@@ -41,3 +41,7 @@
 .mask-gradient {
   background: linear-gradient(to bottom, black 0%, transparent 20%, transparent 80%, black 100%);
 }
+
+.scroll-column {
+  will-change: transform;
+}
