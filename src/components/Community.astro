@@ -1,7 +1,7 @@
 ---
 import users from '../data/comunity.json'
 import UserCard from '../components/ui/UserCard.astro'
-import Button from '../components/ui/Button.astro'
+import { buttonStyles } from './ui/button.styles'
 
 const col1 = users.filter((_, i) => i % 3 === 0)
 const col2 = users.filter((_, i) => i % 3 === 1)
@@ -30,7 +30,7 @@ const col3 = users.filter((_, i) => i % 3 === 2)
 
   <!-- Botón -->
   <div class="z-20 mt-12">
-    <Button href="#conocenos">Conócenos</Button>
+    <a class={buttonStyles} href="#conocenos">Conócenos</a>
   </div>
 </section>
 

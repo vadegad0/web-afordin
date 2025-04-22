@@ -1,5 +1,5 @@
 ---
-import Button from './ui/Button.astro'
+import { buttonStyles } from './ui/button.styles'
 ---
 
 <section class="my-24 flex w-full flex-col items-center justify-center gap-11 py-20 text-white">
@@ -29,7 +29,7 @@ import Button from './ui/Button.astro'
   <div class="flex flex-col items-center gap-4">
     <h2 class="text-5xl font-bold drop-shadow-md">Nuestros últimos proyectos</h2>
     <p class="mb-4 text-lg md:text-xl">Todo el mundo participa, independientemente de su nivel.</p>
-    <Button href="#conocenos">Empieza a contribuir</Button>
+    <a class={buttonStyles} href="#conocenos">Empieza a contribuir</a>
   </div>
 </section>
 
