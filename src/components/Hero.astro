@@ -1,5 +1,5 @@
 ---
-import SaluteHand from '@/assets/SaluteHand.svg'
+import SaluteHand from '@/assets/SaluteHand.astro'
 import { buttonStyles } from './ui/button.styles'
 ---
 
@@ -11,9 +11,9 @@ import { buttonStyles } from './ui/button.styles'
   >
   </div>
   <div class="mb-7 rounded-full bg-linear-(--gradient-rainbow) p-0.5">
-    <div class="flex items-center gap-3 rounded-full bg-[#100d13] px-4 py-2 text-lg">
+    <div class="group flex items-center gap-3 rounded-full bg-[#100d13] px-4 py-2 text-lg">
       <p class="font-manrope font-medium">Bienvenido/a a <span class="font-bold">Afordin</span></p>
-      <SaluteHand />
+      <SaluteHand extraClass="group-hover:animate-salute" />
     </div>
   </div>
   <hgroup class="font-aeonik flex flex-col gap-11 px-2 text-center drop-shadow-[0px_4px_13px_rgba(0,0,0,0.25)] lg:px-0">
