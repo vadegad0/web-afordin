@@ -8,6 +8,8 @@
   --text-hero-title--line-height: 1;
   --text-hero-paragraph: clamp(1.25rem, 2vw, 1.875rem);
   --text-hero-paragraph--line-height: 1.2;
+
+  --color-primary: #100e14;
 }
 
 @keyframes scroll-up {
