@@ -8,14 +8,7 @@ const col2 = users.filter((_, i) => i % 3 === 1)
 const col3 = users.filter((_, i) => i % 3 === 2)
 ---
 
-<section
-  class="relative flex min-h-screen w-full flex-col items-center justify-center gap-11 overflow-hidden bg-black text-white"
->
-  <div
-    class="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b from-transparent via-black/60 to-black"
-  >
-  </div>
-
+<section class="flex w-full flex-col items-center justify-center gap-11 text-white">
   <!-- Título -->
   <div class="z-10 flex flex-col items-center gap-8 px-4 text-center">
     <h2 class="text-5xl font-bold drop-shadow-md">Comunidad</h2>
@@ -23,7 +16,7 @@ const col3 = users.filter((_, i) => i % 3 === 2)
   </div>
 
   <!-- Columnas -->
-  <div class="z-10 mt-6 flex h-[600px] w-full justify-center gap-6 overflow-hidden px-8">
+  <div class="mt-6 flex h-[600px] w-full justify-center gap-6 overflow-hidden px-8">
     <div class="scroll-column scroll-left flex flex-col gap-4" data-direction="down">
       {col1.map((user, i) => <UserCard user={user} key={`col1-${i}`} />)}
     </div>
