@@ -1,9 +1,10 @@
 ---
-export interface Contributor {
-  login: string
-  avatar_url: string
-  html_url: string
+import type { Contributor } from '@/types/index.d'
+
+interface Props {
+  contributors: Array<Contributor>
 }
+
 const { contributors } = Astro.props
 ---
 

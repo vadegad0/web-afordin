@@ -1,19 +1,20 @@
 ---
 import { Font } from 'astro:assets'
-
+import { getLangFromUrl } from '../i18n/utils'
 import SquarePattern from '@/components/SquarePattern.astro'
 import '@/index.css'
+
+const lang = getLangFromUrl(Astro.url)
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Afordin Website</title>
-
     <Font cssVariable="--font-manrope" preload />
     <link rel="preload" href="/fonts/aeonik-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
   </head>

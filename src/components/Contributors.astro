@@ -1,10 +1,13 @@
 ---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <section class="flex flex-col items-center gap-10">
   <hgroup class="flex flex-col items-center gap-4">
-    <h2 class="text-[40px] font-bold">Nuestros maravillosos patrocinadores</h2>
-    <p class="text-lg font-medium text-red-500">Gracias a todos los que lo hacen posible con su apoyo continuo.</p>
+    <h2 class="text-[40px] font-bold">{t('contributtors.title')}</h2>
+    <p class="text-lg font-medium text-red-500">{t('contributtors.paragraph')}</p>
   </hgroup>
 </section>

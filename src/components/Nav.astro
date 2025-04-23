@@ -1,26 +1,31 @@
 ---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+
 const links = [
   {
     href: '#',
-    name: 'Inicio',
+    name: t('nav.home'),
   },
   {
     href: '#',
-    name: 'Valores',
+    name: t('nav.values'),
   },
   {
     href: '#',
-    name: 'Proyectos',
+    name: t('nav.projects'),
   },
   {
     href: '#',
-    name: 'Eventos',
+    name: t('nav.events'),
   },
   {
     href: '#',
-    name: 'Contribuyentes',
+    name: t('nav.contributor'),
   },
-]
+] satisfies Array<{ href: '#'; name: string }>
 
 const socialLinks = [
   {
@@ -31,11 +36,11 @@ const socialLinks = [
     href: '#',
     name: 'discord',
   },
-]
+] satisfies Array<{ href: '#'; name: string }>
 ---
 
 <nav class="absolute top-5 z-50 flex items-center justify-between gap-5 rounded-full bg-white/30 p-4">
-  <img src="./public/logo.png" alt="" />
+  <img src="/logo.png" alt="Afordin Organization Logo" />
   {links.map((link) => <a href={link.href}>{link.name}</a>)}
   {
     socialLinks.map((link) => (

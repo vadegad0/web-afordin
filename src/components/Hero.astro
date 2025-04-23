@@ -1,5 +1,9 @@
 ---
 import Button from '@/components/ui/Button.astro'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <section
@@ -9,15 +13,14 @@ import Button from '@/components/ui/Button.astro'
     class="pointer-events-none absolute inset-0 h-full w-full bg-linear-to-b from-transparent from-65% to-[#100E14] to-95%"
   >
   </div>
-  <div>Bienvenido/a a Afordin</div>
+  <div>{t('hero.welcome')}</div>
   <hgroup class="font-aeonik flex flex-col gap-11 px-2 text-center drop-shadow-[0px_4px_13px_rgba(0,0,0,0.25)] lg:px-0">
-    <h1 class="text-hero-title font-bold">
-      Aprende, crea y crece <br /> en nuestra comunidad
-    </h1>
-    <p class="text-hero-paragraph">El conocimiento se multiplica cuando lo compartimos</p>
+    <h1 class="text-hero-title font-bold">{t('hero.title')} <br /> {t('hero.title.second')}</h1>
+    <p class="text-hero-paragraph">{t('hero.paragraph')}</p>
   </hgroup>
-  <Button href="https://lenguajehtml.com/html/semantica/etiqueta-html-h1/">Crece compartiendo</Button>
+  <Button href="https://lenguajehtml.com/html/semantica/etiqueta-html-h1/"> {t('hero.button')} </Button>
 </section>
+
 <style>
   section {
     mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
