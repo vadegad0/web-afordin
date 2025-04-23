@@ -1,29 +1,28 @@
 ---
 import users from '../data/comunity.json'
 import UserCard from '../components/ui/UserCard.astro'
-import Button from '../components/ui/Button.astro'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import { buttonStyles } from './ui/button.styles'
 
 const col1 = users.filter((_, i) => i % 3 === 0)
 const col2 = users.filter((_, i) => i % 3 === 1)
 const col3 = users.filter((_, i) => i % 3 === 2)
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
-<section
-  class="relative flex min-h-screen w-full flex-col items-center justify-center gap-11 overflow-hidden bg-black text-white"
->
-  <div
-    class="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b from-transparent via-black/60 to-black"
-  >
-  </div>
-
+<section class="flex w-full flex-col items-center justify-center gap-11 text-white">
   <!-- Título -->
-  <div class="z-10 flex flex-col items-center gap-8 px-4 text-center">
-    <h2 class="text-5xl font-bold drop-shadow-md">Comunidad</h2>
-    <p class="text-lg md:text-xl">Conecta, colabora y encuentra apoyo en cada paso de tu camino.</p>
+  <div class="flex flex-col items-center gap-8 px-4 text-center">
+    <h2 class="text-5xl font-bold drop-shadow-md">{t('community.title')}</h2>
+    <p class="text-lg md:text-xl">
+      {t('community.paragraph')}
+    </p>
   </div>
 
   <!-- Columnas -->
-  <div class="z-10 mt-6 flex h-[600px] w-full justify-center gap-6 overflow-hidden px-8">
+  <div class="mt-6 flex h-[600px] w-full justify-center gap-6 overflow-hidden px-8">
     <div class="scroll-column scroll-left flex flex-col gap-4" data-direction="down">
       {col1.map((user, i) => <UserCard user={user} key={`col1-${i}`} />)}
     </div>
@@ -37,11 +36,13 @@ const col3 = users.filter((_, i) => i % 3 === 2)
 
   <!-- Botón -->
   <div class="z-20 mt-12">
-    <Button href="#conocenos">Conócenos</Button>
+    <a class={buttonStyles} href="#conocenos">
+      {t('community.button')}
+    </a>
   </div>
 </section>
 
-<script src="/js/scroll_loop.js" defer></script>
+<script is:inline src="/js/scroll_loop.js" defer></script>
 
 <style>
   :global(a[href='#conocenos']) {

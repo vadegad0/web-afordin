@@ -1,20 +1,34 @@
 ---
-import Button from '@/components/ui/Button.astro'
+import SaluteHand from '@/assets/SaluteHand.astro'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import { buttonStyles } from './ui/button.styles'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
 <section
-  class="relative flex min-h-screen w-full flex-col items-center justify-center gap-11 bg-[url(/Hero.webp)] bg-cover bg-no-repeat"
+  class="relative z-20 flex min-h-screen w-full flex-col items-center justify-center gap-11 bg-[url(/Hero.webp)] bg-cover bg-no-repeat"
 >
   <div
     class="pointer-events-none absolute inset-0 h-full w-full bg-linear-to-b from-transparent from-65% to-[#100E14] to-95%"
   >
   </div>
-  <div>Bienvenido/a a Afordin</div>
+  <div class="mb-7 rounded-full bg-linear-(--gradient-rainbow) p-0.5">
+    <div class="group flex items-center gap-3 rounded-full bg-[#100d13] px-4 py-2 text-lg">
+      <p class="font-manrope font-medium">{t('hero.welcome')} <span class="font-bold">Afordin</span></p>
+      <SaluteHand extraClass="group-hover:animate-salute" />
+    </div>
+  </div>
   <hgroup class="font-aeonik flex flex-col gap-11 px-2 text-center drop-shadow-[0px_4px_13px_rgba(0,0,0,0.25)] lg:px-0">
-    <h1 class="text-hero-title font-bold">
-      Aprende, crea y crece <br /> en nuestra comunidad
-    </h1>
-    <p class="text-hero-paragraph">El conocimiento se multiplica cuando lo compartimos</p>
+    <h1 class="text-hero-title font-bold">{t('hero.title')} <br /> {t('hero.title.second')}</h1>
+    <p class="text-hero-paragraph">{t('hero.paragraph')}</p>
   </hgroup>
-  <Button href="https://lenguajehtml.com/html/semantica/etiqueta-html-h1/">Crece compartiendo</Button>
+  <a class={buttonStyles} href="https://lenguajehtml.com/html/semantica/etiqueta-html-h1/">{t('hero.button')}</a>
 </section>
+
+<style>
+  section {
+    mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  }
+</style>

@@ -10,8 +10,31 @@
   --text-hero-paragraph--line-height: 1.2;
 
   --color-primary: #100e14;
+  --gradient-rainbow: 115deg, #ff85e4 0%, #ffe985 24%, #85ff85 49%, #85bbff 75%, #bc85ff 100%;
+
+  --animate-salute: salute 1200ms ease-in-out forwards;
 }
 
+@keyframes salute {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-20deg);
+  }
+  40% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 @keyframes scroll-up {
   0% {
     transform: translateY(0%);

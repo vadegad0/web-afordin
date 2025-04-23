@@ -1,22 +1,28 @@
 ---
-import { Font } from 'astro:assets'
-
+import Metatags from '@/components/Metatags.astro'
+import { getLangFromUrl } from '../i18n/utils'
+import SquarePattern from '@/components/SquarePattern.astro'
 import '@/index.css'
+
+interface Props {
+  title: string
+  description: string
+  themeColor?: string
+  slug?: string
+}
+
+const { description, title, slug, themeColor } = Astro.props
+const lang = getLangFromUrl(Astro.url)
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Afordin Website</title>
-
-    <Font cssVariable="--font-manrope" preload />
-    <link rel="preload" href="/fonts/aeonik-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <Metatags {description} {title} {slug} {themeColor} />
+    <slot name="head" />
   </head>
-  <body>
+  <body class="relative">
+    <SquarePattern />
     <div class="flex w-full flex-col items-center bg-[var(--color-primary)] text-white">
       <slot />
     </div>
