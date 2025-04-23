@@ -1,6 +1,5 @@
 ---
 import SaluteHand from '@/assets/SaluteHand.astro'
-import Button from '@/components/ui/Button.astro'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 import { buttonStyles } from './ui/button.styles'
 
@@ -25,7 +24,7 @@ const t = useTranslations(lang)
     <h1 class="text-hero-title font-bold">{t('hero.title')} <br /> {t('hero.title.second')}</h1>
     <p class="text-hero-paragraph">{t('hero.paragraph')}</p>
   </hgroup>
-  <Button class={buttonStyles} href="https://lenguajehtml.com/html/semantica/etiqueta-html-h1/"> {t('hero.button')} </Button>
+  <a class={buttonStyles} href="https://lenguajehtml.com/html/semantica/etiqueta-html-h1/">{t('hero.button')}</a>
 </section>
 
 <style>
