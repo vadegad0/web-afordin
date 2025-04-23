@@ -1,20 +1,27 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
 <section class="flex flex-col">
-  <h2 class="text-[48px] font-bold">Nuestros valores</h2>
+  <h2 class="text-[48px] font-bold">{t('values.title')}</h2>
   <div class="flex">
     <div class="m-5 flex h-full w-full flex-col rounded-xl bg-[#19181d] p-4">
       <img src="/personpc.svg" alt="personpc" class="size-fit" />
-      <h3 class="text-[28px] font-bold">Aprendizaje libre</h3>
-      <p>Poder aprender sin la presión de un entorno laboral. Adaptación a los contribuidores</p>
+      <h3 class="text-[28px] font-bold">{t('values.section.free.learning')}</h3>
+      <p>{t('values.section.free.learning.paragraph')}</p>
     </div>
     <div class="m-5 flex h-full w-full flex-col rounded-xl bg-[#19181d] p-4">
       <img src="/messages.svg" alt="messages" />
-      <h3 class="text-[28px] font-bold">Conocimiento compartido</h3>
-      <p class="text-[18px]">Poder aprender sin la presión de un entorno laboral. Adaptación a los contribuidores</p>
+      <h3 class="text-[28px] font-bold">{t('values.section.shared.learning')}</h3>
+      <p class="text-[18px]">{t('values.section.shared.learning.paragraph')}</p>
     </div>
     <div class="m-5 flex h-full w-full flex-col rounded-xl bg-[#19181d] p-4">
       <img src="/personStairs.svg" alt="personStairs" class="size-fit" />
-      <h3 class="text-[28px] font-bold">Superacion segura</h3>
-      <p class="text-[18px]">Poder aprender sin la presión de un entorno laboral. Adaptación a los contribuidores</p>
+      <h3 class="text-[28px] font-bold">{t('values.section.safe.overcoming')}</h3>
+      <p class="text-[18px]">{t('values.section.safe.overcoming.paragraph')}</p>
     </div>
   </div>
 </section>

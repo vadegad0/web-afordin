@@ -1,5 +1,6 @@
 ---
 import Metatags from '@/components/Metatags.astro'
+import { getLangFromUrl } from '../i18n/utils'
 import SquarePattern from '@/components/SquarePattern.astro'
 import '@/index.css'
 
@@ -11,10 +12,11 @@ interface Props {
 }
 
 const { description, title, slug, themeColor } = Astro.props
+const lang = getLangFromUrl(Astro.url)
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <Metatags {description} {title} {slug} {themeColor} />
     <slot name="head" />
