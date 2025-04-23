@@ -1,4 +1,5 @@
 ---
+import SaluteHand from '@/assets/SaluteHand.astro'
 import { buttonStyles } from './ui/button.styles'
 ---
 
@@ -9,12 +10,17 @@ import { buttonStyles } from './ui/button.styles'
     class="pointer-events-none absolute inset-0 h-full w-full bg-linear-to-b from-transparent from-65% to-[#100E14] to-95%"
   >
   </div>
-  <div>Bienvenido/a a Afordin</div>
+  <div class="mb-7 rounded-full bg-linear-(--gradient-rainbow) p-0.5">
+    <div class="group flex items-center gap-3 rounded-full bg-[#100d13] px-4 py-2 text-lg">
+      <p class="font-manrope font-medium">Bienvenido/a a <span class="font-bold">Afordin</span></p>
+      <SaluteHand extraClass="group-hover:animate-salute" />
+    </div>
+  </div>
   <hgroup class="font-aeonik flex flex-col gap-11 px-2 text-center drop-shadow-[0px_4px_13px_rgba(0,0,0,0.25)] lg:px-0">
     <h1 class="text-hero-title font-bold">
       Aprende, crea y crece <br /> en nuestra comunidad
     </h1>
-    <p class="text-hero-paragraph">El conocimiento se multiplica cuando lo compartimos</p>
+    <p class="text-hero-paragraph font-manrope font-normal">El conocimiento se multiplica cuando lo compartimos</p>
   </hgroup>
   <a class={buttonStyles} href="https://lenguajehtml.com/html/semantica/etiqueta-html-h1/">Crece compartiendo</a>
 </section>
