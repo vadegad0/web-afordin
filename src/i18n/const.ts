@@ -4,6 +4,7 @@ export const KEY_TRANSLATIONS = {
   'community.button': 'community.button',
   'contributtors.title': 'contributtors.title',
   'contributtors.paragraph': 'contributtors.paragraph',
+  'contributtors.anchor': 'contributtors.anchor',
   'nav.home': 'nav.home',
   'nav.values': 'nav.values',
   'nav.projects': 'nav.projects',
@@ -32,4 +33,7 @@ export const KEY_TRANSLATIONS = {
   'values.section.shared.learning.paragraph': 'values.section.shared.learning.paragraph',
   'values.section.safe.overcoming': 'values.section.safe.overcoming',
   'values.section.safe.overcoming.paragraph': 'values.section.safe.overcoming.paragraph',
+  'lastProject.title': 'lastProject.title',
+  'lastProject.paragraph': 'lastProject.paragraph',
+  'lastProject.anchor': 'lastProject.anchor',
 } as const
