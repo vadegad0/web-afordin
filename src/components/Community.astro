@@ -1,8 +1,8 @@
 ---
 import users from '../data/comunity.json'
 import UserCard from '../components/ui/UserCard.astro'
-import Button from '../components/ui/Button.astro'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import { buttonStyles } from './ui/button.styles'
 
 const col1 = users.filter((_, i) => i % 3 === 0)
 const col2 = users.filter((_, i) => i % 3 === 1)
