@@ -1,10 +1,13 @@
 ---
+import { cn } from '@/utils/cn'
+import { buttonStyles } from './button.styles'
+
 type Props = {
-  href: string
+  classNames: string
 }
-const { href } = Astro.props
+const { classNames } = Astro.props
 ---
 
-<a href={href} target="_blank" class="font-manrope rounded-full bg-white px-10 py-5 font-medium text-black">
+<button class={cn(buttonStyles, classNames)} {...Astro.props}>
   <slot />
-</a>
+</button>

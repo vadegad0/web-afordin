@@ -1,0 +1,36 @@
+---
+import mods from '../data/contributors/mods.json'
+import { buttonStyles } from './ui/button.styles'
+---
+
+<section class="flex flex-col gap-10 text-center">
+  <hgroup class="flex flex-col gap-4 text-center">
+    <h2 class="text-[40px] font-bold">Nuestros maravillosos patrocinadores</h2>
+    <p class="text-lg font-medium">Gracias a todos los que lo hacen posible con su apoyo continuo.</p>
+  </hgroup>
+  <article
+    class="grid w-full grid-cols-[repeat(auto-fill,minmax(80px,_1fr))] gap-2 sm:grid-cols-[repeat(auto-fill,minmax(120px,_1fr))]"
+  >
+    {
+      mods.map((mod) => {
+        return (
+          <div class="group relative">
+            <div title="title" class="absolute -top-8 left-0 hidden rounded-md bg-slate-800 px-4 group-hover:block">
+              {mod.name}
+            </div>
+
+            <img
+              alt={`${mod.username} contributor avatar`}
+              src={mod.avatar}
+              class="group aspect-square h-[100px] w-full object-cover sm:h-[140px]"
+            />
+          </div>
+        )
+      })
+    }
+  </article>
+  <!-- /TODO: Add twitch subs -->
+  <div class="flex w-full justify-center">
+    <a class={buttonStyles} href="https://discord.com/invite/comuafor">Conócenos</a>
+  </div>
+</section>

@@ -1,5 +1,47 @@
 ---
+const links = [
+  {
+    href: '#',
+    name: 'Inicio',
+  },
+  {
+    href: '#',
+    name: 'Valores',
+  },
+  {
+    href: '#',
+    name: 'Proyectos',
+  },
+  {
+    href: '#',
+    name: 'Eventos',
+  },
+  {
+    href: '#',
+    name: 'Contribuyentes',
+  },
+]
 
+const socialLinks = [
+  {
+    href: '#',
+    name: 'github',
+  },
+  {
+    href: '#',
+    name: 'discord',
+  },
+]
 ---
 
-<p class="fixed m-auto my-8 w-full max-w-7xl bg-green-500">Nav</p>
+<nav class="absolute top-5 z-50 flex items-center justify-between gap-5 rounded-full bg-white/30 p-4">
+  <img src="/logo.png" alt="" />
+  {links.map((link) => <a href={link.href}>{link.name}</a>)}
+  {
+    socialLinks.map((link) => (
+      <a href={link.href} class="size-8">
+        <img src={`./social/${link.name}.png`} alt={link.name} />
+      </a>
+    ))
+  }
+</nav>

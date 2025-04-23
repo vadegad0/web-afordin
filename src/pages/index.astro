@@ -12,10 +12,10 @@ import Values from '@/components/Values.astro'
 import Layout from '@/layouts/Layout.astro'
 ---
 
-<Layout>
+<Layout title="Afordigital Website" description="Que un copywriter se haga una descripción muy chula">
   <Nav />
   <Hero />
-  <main class="mx-auto w-full max-w-7xl pb-20">
+  <main class="relative z-10 mx-auto flex w-full max-w-7xl flex-col gap-[240px] pb-20">
     <Values />
     <AboutUs />
     <LastProjects />
@@ -23,8 +23,8 @@ import Layout from '@/layouts/Layout.astro'
     <Community />
     <Contributors />
     <FinalCTA />
-    <Footer />
   </main>
+  <Footer />
 </Layout>
 
 <style></style>
