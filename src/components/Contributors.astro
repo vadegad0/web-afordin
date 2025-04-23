@@ -2,7 +2,7 @@
 import mods from '../data/contributors/mods.json'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 import { buttonStyles } from './ui/button.styles'
-        
+
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
@@ -35,6 +35,6 @@ const t = useTranslations(lang)
   </article>
   <!-- /TODO: Add twitch subs -->
   <div class="flex w-full justify-center">
-    <a class={buttonStyles} href="https://discord.com/invite/comuafor">Conócenos</a>
+    <a target="_blank" class={buttonStyles} href="https://discord.com/invite/comuafor">{t('contributtors.anchor')}</a>
   </div>
 </section>

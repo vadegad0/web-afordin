@@ -1,8 +1,8 @@
 import type { KeyLang, KeyTranslation, UI } from './types.d'
 
 export const languages = {
-  en: 'English',
   es: 'Español',
+  en: 'English',
   // add more languages here
   // ca: 'Catalan'
 }
@@ -29,6 +29,7 @@ export const ui = {
     // contributtors
     'contributtors.title': 'Nuestros maravillosos patrocinadores',
     'contributtors.paragraph': 'Gracias a todos los que lo hacen posible con su apoyo continuo.',
+    'contributtors.anchor': 'Conócenos',
     // nav
     'nav.home': 'Inicio',
     'nav.values': 'Valores',
@@ -61,6 +62,10 @@ export const ui = {
     'values.section.shared.learning.paragraph': '',
     'values.section.safe.overcoming': 'Superacion segura',
     'values.section.safe.overcoming.paragraph': '',
+    // Last Project
+    'lastProject.title': 'Nuestros últimos proyectos',
+    'lastProject.paragraph': 'Todo el mundo participa, independientemente de su nivel.',
+    'lastProject.anchor': 'Empieza a contribuir',
   },
   en: {
     // community
@@ -70,6 +75,7 @@ export const ui = {
     // contributtors
     'contributtors.title': 'Our wonderful sponsors',
     'contributtors.paragraph': 'Thanks to everyone who makes this possible with their continuous support.',
+    'contributtors.anchor': 'Get to know us',
     // nav
     'nav.home': 'Home',
     'nav.values': 'Values',
@@ -102,5 +108,9 @@ export const ui = {
     'values.section.shared.learning.paragraph': '',
     'values.section.safe.overcoming': 'Safe overcoming',
     'values.section.safe.overcoming.paragraph': '',
+    // Last Project
+    'lastProject.title': 'Our latest projects',
+    'lastProject.paragraph': 'Everyone participates, regardless of their level.',
+    'lastProject.anchor': 'Start contributing',
   },
 } as const satisfies UI<KeyLang, KeyTranslation>
