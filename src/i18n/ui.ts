@@ -32,7 +32,7 @@ export const ui = {
     // nav
     'nav.home': 'Inicio',
     'nav.values': 'Valores',
-    'nav.projects': 'Valores',
+    'nav.projects': 'Proyectos',
     'nav.events': 'Eventos',
     'nav.contributor': 'Contribuyentes',
     // footer
