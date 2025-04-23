@@ -1,12 +1,16 @@
 ---
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import Github from '../assets/Github.svg?url'
+import Discord from '../assets/Discord.svg?url'
+import Logo from '../assets/Logo.svg?url'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
+
 const links = [
   {
-    href: '#',
+    href: '/',
     name: t('nav.home'),
   },
   {
@@ -25,28 +29,147 @@ const links = [
     href: '#',
     name: t('nav.contributor'),
   },
-] satisfies Array<{ href: '#'; name: string }>
+] satisfies Array<{ href: string; name: string }>
 
 const socialLinks = [
   {
-    href: '#',
+    href: 'https://www.github.com/Afordin',
     name: 'github',
+    icon: Github
   },
   {
-    href: '#',
+    href: 'https://discord.com/invite/comuafor',
     name: 'discord',
+    icon: Discord
   },
-] satisfies Array<{ href: '#'; name: string }>
+] satisfies Array<{ href: string; name: string; icon: any}>
 ---
 
-<nav class="absolute top-5 z-50 flex items-center justify-between gap-5 rounded-full bg-white/30 p-4">
-  <img src="/logo.png" alt="Afordin Organization Logo" />
-  {links.map((link) => <a href={link.href}>{link.name}</a>)}
-  {
-    socialLinks.map((link) => (
-      <a href={link.href} class="size-8">
-        <img src={`./social/${link.name}.png`} alt={link.name} />
+<header class="fixed inset-x-0 top-0 z-50 container mx-auto">
+  <nav
+    class="mt-12 flex items-center justify-between gap-6 rounded-full border border-orange-600/20 bg-gradient-to-br from-white/15 to-white/0 px-8 py-2 shadow-lg backdrop-blur-md transition-all duration-300 ease-in-out"
+  >
+    <div>
+      <a href="/">
+        <img src={Logo} alt="Logo de Afordin" />
       </a>
-    ))
-  }
-</nav>
+    </div>
+    <div class="flex lg:hidden">
+      <button
+        type="button"
+        id="menu-toggle"
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+      >
+        <span class="sr-only">Toggle menu</span>
+        <svg class="hamburger-icon size-10" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+        <svg class="close-icon hidden size-10" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Navigation menu for large screens -->
+    <div class="hidden lg:flex lg:items-center lg:gap-6">
+      {links.map((link, index) => (
+        <>
+          <a href={link.href} class="relative font-semibold text-white after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full">
+            {link.name}
+          </a>
+          {index < links.length - 1 && <span class="text-[8px] text-gray-300">●</span>}
+        </>
+      ))}
+    </div>
+
+    <!-- Social media icons for large screens -->
+    <div class="hidden items-center justify-center gap-4 lg:flex">
+      {socialLinks.map((link) => (
+        <a href={link.href} target="_blank" class="inline-block transition-transform duration-300 hover:scale-110">
+          <img src={link.icon} alt={`Icono de ${link.name}`} class="h-11 w-11" />
+        </a>
+      ))}
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div
+    class="pointer-events-none mx-auto mt-2 max-w-[95%] scale-95 transform opacity-0 transition-all duration-50 lg:hidden"
+    id="mobile-menu"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div
+      class="flex flex-col gap-4 rounded-2xl border border-white/40 bg-gradient-to-br from-white/15 to-white/0 shadow-lg backdrop-blur-md"
+    >
+      <div class="flex flex-col items-center gap-5 pt-6 pb-4">
+        {links.map((link) => (
+          <a href={link.href} class="relative font-semibold text-white after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full">
+            {link.name}
+          </a>
+        ))}
+      </div>
+      <div class="flex flex-row items-center justify-center gap-6 border-t border-white/40 py-3">
+        {socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            class="inline-block transition-transform duration-300 hover:scale-110"
+          >
+            <img src={link.icon} alt={`Icono de ${link.name}`} class="h-11 w-11" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle')
+    const hamburgerIcon = document.querySelector('.hamburger-icon')
+    const closeIcon = document.querySelector('.close-icon')
+    const mobileMenu = document.getElementById('mobile-menu')
+    const nav = document.querySelector('nav')
+
+    if (menuToggle && hamburgerIcon && closeIcon && mobileMenu) {
+      let isMenuOpen = false
+
+      menuToggle.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen
+
+        mobileMenu.classList.toggle('opacity-0', !isMenuOpen)
+        mobileMenu.classList.toggle('scale-95', !isMenuOpen)
+        mobileMenu.classList.toggle('pointer-events-none', !isMenuOpen)
+        mobileMenu.classList.toggle('opacity-100', isMenuOpen)
+        mobileMenu.classList.toggle('scale-100', isMenuOpen)
+        mobileMenu.classList.toggle('pointer-events-auto', isMenuOpen)
+
+        hamburgerIcon.classList.toggle('hidden', isMenuOpen)
+        closeIcon.classList.toggle('hidden', !isMenuOpen)
+      })
+    }
+
+    if (nav) {
+      const maxMargin = 48
+
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY
+
+        const newMargin = Math.max(0, maxMargin - scrollPosition)
+
+        nav.style.marginTop = `${newMargin}px`
+
+        if (newMargin === 0) {
+          nav.classList.add('sticky-nav')
+        } else {
+          nav.classList.remove('sticky-nav')
+        }
+      }
+
+      handleScroll()
+
+      window.addEventListener('scroll', handleScroll)
+    }
+  })
+</script>
