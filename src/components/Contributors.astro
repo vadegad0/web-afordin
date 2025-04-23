@@ -1,13 +1,40 @@
 ---
+import mods from '../data/contributors/mods.json'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
-
+import { buttonStyles } from './ui/button.styles'
+        
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<section class="flex flex-col items-center gap-10">
-  <hgroup class="flex flex-col items-center gap-4">
+<section class="flex flex-col gap-10 text-center">
+  <hgroup class="flex flex-col gap-4 text-center">
     <h2 class="text-[40px] font-bold">{t('contributtors.title')}</h2>
-    <p class="text-lg font-medium text-red-500">{t('contributtors.paragraph')}</p>
+    <p class="text-lg font-medium">{t('contributtors.paragraph')}</p>
   </hgroup>
+  <article
+    class="grid w-full grid-cols-[repeat(auto-fill,minmax(80px,_1fr))] gap-2 sm:grid-cols-[repeat(auto-fill,minmax(120px,_1fr))]"
+  >
+    {
+      mods.map((mod) => {
+        return (
+          <div class="group relative">
+            <div title="title" class="absolute -top-8 left-0 hidden rounded-md bg-slate-800 px-4 group-hover:block">
+              {mod.name}
+            </div>
+
+            <img
+              alt={`${mod.username} contributor avatar`}
+              src={mod.avatar}
+              class="group aspect-square h-[100px] w-full object-cover sm:h-[140px]"
+            />
+          </div>
+        )
+      })
+    }
+  </article>
+  <!-- /TODO: Add twitch subs -->
+  <div class="flex w-full justify-center">
+    <a class={buttonStyles} href="https://discord.com/invite/comuafor">Conócenos</a>
+  </div>
 </section>
