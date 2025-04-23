@@ -13,6 +13,52 @@
   --gradient-rainbow: 115deg, #ff85e4 0%, #ffe985 24%, #85ff85 49%, #85bbff 75%, #bc85ff 100%;
 
   --animate-salute: salute 1200ms ease-in-out forwards;
+
+  /* FONTSIZES */
+  --text-7xl: 3.5rem; /* 56px */
+  --text-7xl--line-height: 3.5rem; /* 56px */
+  --text-7xl--font-weight: 700;
+
+  --text-6xl: 2.5rem; /* 40px */
+  --text-6xl--line-height: 2.5rem; /* 40px */
+  --text-6xl--font-weight: 700;
+
+  --text-5xl: 2.25rem; /* 36px */
+  --text-5xl--line-height: 2.25rem; /* 36px */
+  --text-5xl--font-weight: 700;
+
+  --text-4xl: 2rem; /* 32px */
+  --text-4xl--line-height: 2.5rem; /* 40px */
+  --text-4xl--font-weight: 700;
+
+  --text-2xl: 1.25rem; /* 20px */
+  --text-2xl--line-height: 1.75rem; /* 28px */
+  --text-2xl--font-weight: 500;
+
+  --text-hero: 1.5rem; /* 24px */
+  --text-hero--line-height: 2.25rem; /* 36px */
+  --text-hero--font-weight: 400;
+
+  --text-3xl: 1.5rem; /* 24px */
+  --text-3xl--line-height: 2.25rem; /* 36px */
+  --text-3xl--font-weight: 400;
+
+  --text-xl: 1.125rem; /* 18px */
+  --text-xl--line-height: 1.5rem; /* 24px */
+  --text-xl--font-weight: 400;
+
+  --text-base: 1rem; /* 16px */
+  --text-base--line-height: 1.5rem; /* 24px */
+  --text-base--font-weight: 400;
+
+  --text-sm: 0.875rem; /* 14px */
+  --text-sm--line-height: 1.25rem; /* 20px */
+  --text-sm--letter-spacing: -0.0125rem; /* -0.2px */
+  --text-sm--font-weight: 400;
+
+  --text-button-lg: 1rem; /* 16px */
+  --text-button-lg--line-height: 1.5rem; /* 24px */
+  --text-button-lg--font-weight: 500;
 }
 
 @keyframes salute {
