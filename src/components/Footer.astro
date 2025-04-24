@@ -2,6 +2,7 @@
 import FooterContributors from './FooterContributors.astro'
 import FooterDesignersContributors from './FooterDesignersContributors.astro'
 import type { Contributor } from '@/types/index.d'
+import { fetchGithub } from '../utils/fetchGithub'
 import { designersData } from '@/data/designersData'
 import Discord from '@/assets/Discord.svg'
 import Youtube from '@/assets/Youtube.svg'
@@ -10,8 +11,9 @@ import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 import SelectLanguage from './ui/SelectLanguage.astro'
 import Link from '@/components/Link.astro'
 
-const response = await fetch(`https://api.github.com/repos/Afordin/web-afordin/contributors`)
-const dataDevs: Array<Contributor> = await response.json()
+let dataDevs: Array<Contributor> = []
+
+dataDevs = await fetchGithub('Afordin/web-afordin')
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -111,7 +113,13 @@ const links = [
         </div>
         <div class="contend-end flex flex-col items-center gap-4 lg:items-end">
           <h3 class="text-base">{t('footer.title.developers')}</h3>
-          <FooterContributors contributors={dataDevs} />
+          {
+            dataDevs?.length > 0 ? (
+              <FooterContributors contributors={dataDevs} />
+            ) : (
+              <p class="text-sm text-white">Contribuidores no disponibles en este momento</p>
+            )
+          }
         </div>
       </div>
     </div>
