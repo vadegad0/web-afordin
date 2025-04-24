@@ -1,4 +1,5 @@
 ---
+import Link from '@/components/Link.astro'
 import type { Contributor } from '@/types/index.d'
 
 interface Props {
@@ -43,7 +44,11 @@ const secondRow = contributors?.slice(Math.ceil(contributors.length / 2))
   {
     secondRow?.map((contributor: Contributor) => {
       return (
-        <a href={contributor.html_url} class="group relative transform transition-all duration-500 ease-in-out">
+        <Link
+          external
+          to={contributor.html_url}
+          class="group relative transform transition-all duration-500 ease-in-out"
+        >
           <img src={contributor.avatar_url} alt={contributor.login} class="h-11 w-11 rounded-full shadow-inner" />
           <div class="hidden group-hover:block">
             <div class="group absolute -top-12 left-1/2 z-50 flex -translate-x-1/2 flex-col items-center rounded-sm px-3 py-[6px] text-center text-sm font-semibold text-[#111111] before:-top-2">
@@ -62,7 +67,7 @@ const secondRow = contributors?.slice(Math.ceil(contributors.length / 2))
               <div class="h-0 w-fit border-t-8 border-r-8 border-l-8 border-transparent border-t-white" />
             </div>
           </div>
-        </a>
+        </Link>
       )
     })
   }
