@@ -1,7 +1,7 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
 
-export interface ButtonProps extends HTMLAttributes<'button'> {}
+interface Props extends HTMLAttributes<'button'> {}
 
 const { class: classNames, ...restProps } = Astro.props
 ---
