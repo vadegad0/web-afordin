@@ -45,13 +45,13 @@ const links = [
 ---
 
 <footer
-  class="box-border flex w-full justify-center py-24"
+  class="box-border flex w-full justify-center py-16"
   style="background-image: linear-gradient(to bottom, #0E0F19, #271021, #2F1222, #5C353E);"
 >
   <div class="flex w-full max-w-7xl flex-col-reverse px-4 py-4 lg:flex-row 2xl:px-0">
-    <div class="flex w-full flex-col gap-[36px] border-[#989898] text-center lg:border-r-2 lg:pr-14 lg:text-left">
+    <div class="flex w-full flex-col gap-[36px] border-[#483342] text-center lg:border-r-1 lg:pr-14 lg:text-left">
       <img src="./svg/afordin.svg" alt="afordin" class="mx-auto h-[33px] w-[218px] lg:mx-0" />
-      <ul class="flex flex-col gap-3 text-lg">
+      <ul class="flex flex-col gap-3 text-base">
         {
           links.map((link) => (
             <li>
@@ -65,7 +65,7 @@ const links = [
           ))
         }
       </ul>
-      <SelectLanguage />
+      <!-- <SelectLanguage /> -->
       <div class="flex flex-col gap-2">
         <p class="text-sm">
           {t('footer.paragraph.designed')}
@@ -102,15 +102,15 @@ const links = [
         </div>
       </div>
     </div>
-    <div class="flex w-full flex-col gap-8 pb-28 text-center lg:pb-0 lg:pl-14 lg:text-right">
-      <h2 class="text-xl">{t('footer.title')}</h2>
+    <div class="flex w-full flex-col justify-center gap-8 pb-28 text-center lg:pb-0 lg:pl-14 lg:text-right">
+      <!-- <h2 class="text-xl">{t('footer.title')}</h2> -->
       <div class="flex flex-col gap-6">
         <div class="contend-end flex flex-col items-center gap-4 lg:items-end">
-          <h3 class="text-lg">{t('footer.title.designer')}</h3>
+          <h3 class="text-base">{t('footer.title.designer')}</h3>
           <FooterDesignersContributors contributors={designersData} />
         </div>
         <div class="contend-end flex flex-col items-center gap-4 lg:items-end">
-          <h3 class="text-lg">{t('footer.title.developers')}</h3>
+          <h3 class="text-base">{t('footer.title.developers')}</h3>
           <FooterContributors contributors={dataDevs} />
         </div>
       </div>

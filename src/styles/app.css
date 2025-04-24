@@ -63,7 +63,7 @@
 
 @layer components {
   .btn {
-    @apply font-manrope w-fit rounded-full bg-white px-10 py-5 font-medium text-black;
+    @apply font-manrope w-fit rounded-full bg-white px-6 py-3 font-medium text-[#100E14] shadow-lg;
   }
 }
 
