@@ -18,8 +18,12 @@ const t = useTranslations(lang)
       <SaluteHand extraClass="group-hover:animate-salute" />
     </div>
   </div>
-  <hgroup class="font-aeonik flex flex-col gap-11 px-2 text-center drop-shadow-[0px_4px_13px_rgba(0,0,0,0.25)] lg:px-0">
-    <h1 class="text-hero-title font-bold">{t('hero.title')} <br /> {t('hero.title.second')}</h1>
+  <hgroup class="flex flex-col gap-11 px-2 text-center drop-shadow-[0px_4px_13px_rgba(0,0,0,0.25)] lg:px-0">
+    <h1 class="text-hero-title font-calsans leading-[1.3] font-bold tracking-widest">
+      {t('hero.title')}
+      <br />
+      {t('hero.title.second')}
+    </h1>
     <p class="text-hero-paragraph">{t('hero.paragraph')}</p>
   </hgroup>
   <Link external asButton to="https://lenguajehtml.com/html/semantica/etiqueta-html-h1/">

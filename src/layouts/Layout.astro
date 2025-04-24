@@ -23,18 +23,10 @@ const lang = getLangFromUrl(Astro.url)
   </head>
   <body class="relative">
     <SquarePattern />
-    <div class="flex w-full flex-col items-center gap-[120px] bg-[var(--color-primary)] text-white lg:gap-[200px]">
+    <div
+      class="font-manrope flex w-full flex-col items-center gap-[120px] bg-[var(--color-primary)] text-white lg:gap-[200px]"
+    >
       <slot />
     </div>
   </body>
 </html>
-
-<style is:global>
-  @font-face {
-    font-family: Aeonik;
-    src: url('/fonts/aeonik-bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-  }
-</style>
