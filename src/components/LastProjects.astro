@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 import { buttonStyles } from './ui/button.styles'
+import Link from '@/components/Link.astro'
 
 const PROJECTS_INFO = [
   {
@@ -43,7 +44,7 @@ const t = useTranslations(lang)
   <div class="flex flex-col items-center gap-4">
     <h2 class="text-5xl font-bold drop-shadow-md">{t('lastProject.title')}</h2>
     <p class="mb-4 text-lg md:text-xl">{t('lastProject.paragraph')}</p>
-    <a class={buttonStyles} href="#conocenos">{t('lastProject.anchor')}</a>
+    <Link to="#conocenos" class={buttonStyles}>{t('lastProject.anchor')}</Link>
   </div>
 </section>
 

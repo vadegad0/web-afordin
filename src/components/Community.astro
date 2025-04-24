@@ -3,6 +3,7 @@ import users from '../data/comunity.json'
 import UserCard from '../components/ui/UserCard.astro'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 import { buttonStyles } from './ui/button.styles'
+import Link from '@/components/Link.astro'
 
 const col1 = users.filter((_, i) => i % 3 === 0)
 const col2 = users.filter((_, i) => i % 3 === 1)
@@ -36,9 +37,9 @@ const t = useTranslations(lang)
 
   <!-- Botón -->
   <div class="z-20 mt-12">
-    <a class={buttonStyles} href="#conocenos">
+    <Link to="#conocenos" class={buttonStyles}>
       {t('community.button')}
-    </a>
+    </Link>
   </div>
 </section>
 
