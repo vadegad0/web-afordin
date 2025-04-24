@@ -7,9 +7,7 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<section
-  class="relative z-20 flex min-h-screen w-full flex-col items-center justify-center gap-11 bg-[url(/Hero.webp)] bg-cover bg-no-repeat"
->
+<section class="relative z-20 flex min-h-screen w-full flex-col items-center justify-center gap-11">
   <div
     class="pointer-events-none absolute inset-0 h-full w-full bg-linear-to-b from-transparent from-65% to-[#100E14] to-95%"
   >
@@ -27,6 +25,14 @@ const t = useTranslations(lang)
   <a target="_blank" class={buttonStyles} href="https://lenguajehtml.com/html/semantica/etiqueta-html-h1/"
     >{t('hero.button')}</a
   >
+  <video
+    class="pointer-events-none absolute top-0 left-0 -z-10 aspect-video h-full w-full"
+    src="/media/header.webm"
+    preload="metadata"
+    autoplay
+    loop
+    muted
+    playsinline></video>
 </section>
 
 <style>
