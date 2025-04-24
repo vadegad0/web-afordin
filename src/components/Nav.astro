@@ -7,7 +7,6 @@ import Logo from '../assets/Logo.svg?url'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
-
 const links = [
   {
     href: '/',
@@ -35,14 +34,14 @@ const socialLinks = [
   {
     href: 'https://www.github.com/Afordin',
     name: 'github',
-    icon: Github
+    icon: Github,
   },
   {
     href: 'https://discord.com/invite/comuafor',
     name: 'discord',
-    icon: Discord
+    icon: Discord,
   },
-] satisfies Array<{ href: string; name: string; icon: any}>
+] satisfies Array<{ href: string; name: string; icon: any }>
 ---
 
 <header class="fixed inset-x-0 top-0 z-50 container mx-auto">
@@ -72,23 +71,30 @@ const socialLinks = [
 
     <!-- Navigation menu for large screens -->
     <div class="hidden lg:flex lg:items-center lg:gap-6">
-      {links.map((link, index) => (
-        <>
-          <a href={link.href} class="relative font-semibold text-white after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full">
-            {link.name}
-          </a>
-          {index < links.length - 1 && <span class="text-[8px] text-gray-300">●</span>}
-        </>
-      ))}
+      {
+        links.map((link, index) => (
+          <>
+            <a
+              href={link.href}
+              class="relative font-semibold text-white after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full"
+            >
+              {link.name}
+            </a>
+            {index < links.length - 1 && <span class="text-[8px] text-gray-300">●</span>}
+          </>
+        ))
+      }
     </div>
 
     <!-- Social media icons for large screens -->
     <div class="hidden items-center justify-center gap-4 lg:flex">
-      {socialLinks.map((link) => (
-        <a href={link.href} target="_blank" class="inline-block transition-transform duration-300 hover:scale-110">
-          <img src={link.icon} alt={`Icono de ${link.name}`} class="h-11 w-11" />
-        </a>
-      ))}
+      {
+        socialLinks.map((link) => (
+          <a href={link.href} target="_blank" class="inline-block transition-transform duration-300 hover:scale-110">
+            <img src={link.icon} alt={`Icono de ${link.name}`} class="h-11 w-11" />
+          </a>
+        ))
+      }
     </div>
   </nav>
 
@@ -103,22 +109,25 @@ const socialLinks = [
       class="flex flex-col gap-4 rounded-2xl border border-white/40 bg-gradient-to-br from-white/15 to-white/0 shadow-lg backdrop-blur-md"
     >
       <div class="flex flex-col items-center gap-5 pt-6 pb-4">
-        {links.map((link) => (
-          <a href={link.href} class="relative font-semibold text-white after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full">
-            {link.name}
-          </a>
-        ))}
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              class="relative font-semibold text-white after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full"
+            >
+              {link.name}
+            </a>
+          ))
+        }
       </div>
       <div class="flex flex-row items-center justify-center gap-6 border-t border-white/40 py-3">
-        {socialLinks.map((link) => (
-          <a
-            href={link.href}
-            target="_blank"
-            class="inline-block transition-transform duration-300 hover:scale-110"
-          >
-            <img src={link.icon} alt={`Icono de ${link.name}`} class="h-11 w-11" />
-          </a>
-        ))}
+        {
+          socialLinks.map((link) => (
+            <a href={link.href} target="_blank" class="inline-block transition-transform duration-300 hover:scale-110">
+              <img src={link.icon} alt={`Icono de ${link.name}`} class="h-11 w-11" />
+            </a>
+          ))
+        }
       </div>
     </div>
   </div>
