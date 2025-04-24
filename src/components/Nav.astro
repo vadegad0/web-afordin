@@ -45,7 +45,9 @@ const socialLinks = [
 ] satisfies Array<{ to: string; name: string; icon: any }>
 ---
 
-<header class="font-manrope fixed inset-x-0 top-0 z-50 mx-auto max-h-40 max-w-7xl px-4">
+<header
+  class="font-manrope fixed inset-x-0 top-0 z-50 mx-auto max-h-40 max-w-7xl px-4 transition-transform duration-300 ease-in-out"
+>
   <nav
     class="mt-6 flex items-center justify-between gap-6 rounded-full border border-orange-600/20 bg-gradient-to-br from-white/15 to-white/0 px-8 py-4 shadow-lg backdrop-blur-md transition-all duration-300 ease-in-out"
   >
@@ -141,6 +143,9 @@ const socialLinks = [
     const closeIcon = document.querySelector('.close-icon')
     const mobileMenu = document.getElementById('mobile-menu')
     const nav = document.querySelector('nav')
+    const header = document.querySelector('header')
+
+    let lastScrollY = window.scrollY
 
     if (menuToggle && hamburgerIcon && closeIcon && mobileMenu) {
       let isMenuOpen = false
@@ -160,21 +165,28 @@ const socialLinks = [
       })
     }
 
-    if (nav) {
-      const maxMargin = 48
+    if (nav && header) {
+      const initialMargin = 32
+      const scrolledMargin = 24
 
       const handleScroll = () => {
         const scrollPosition = window.scrollY
+        const scrollingDown = scrollPosition > lastScrollY
 
-        const newMargin = Math.max(0, maxMargin - scrollPosition)
+        let newMargin = initialMargin
+
+        if (scrollPosition > 0) {
+          newMargin = scrolledMargin
+        }
 
         nav.style.marginTop = `${newMargin}px`
 
-        if (newMargin === 0) {
-          nav.classList.add('sticky-nav')
+        if (scrollingDown && scrollPosition > 100) {
+          header.classList.add('-translate-y-full')
         } else {
-          nav.classList.remove('sticky-nav')
+          header.classList.remove('-translate-y-full')
         }
+        lastScrollY = scrollPosition
       }
 
       handleScroll()
