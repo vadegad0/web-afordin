@@ -4,9 +4,9 @@
   --font-manrope: var(--font-manrope);
   --font-aeonik: Aeonik, sans-serif;
 
-  --text-hero-title: clamp(2.5rem, 5vw, 4.5rem);
+  --text-hero-title: clamp(2.5rem, 5vw, 4rem);
   --text-hero-title--line-height: 1;
-  --text-hero-paragraph: clamp(1.25rem, 2vw, 1.875rem);
+  --text-hero-paragraph: clamp(1.25rem, 2vw, 1.5rem);
   --text-hero-paragraph--line-height: 1.2;
 
   --color-primary: #100e14;

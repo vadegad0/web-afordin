@@ -49,7 +49,7 @@ export const ui = {
     'footer.title.developers': 'Desarrolladores',
     'footer.title.viewers': 'Espectadores',
     // hero
-    'hero.welcome': 'Bienvenido/a a Afordin',
+    'hero.welcome': 'Bienvenido/a a ',
     'hero.title': 'Aprende, crea y crece',
     'hero.title.second': 'en nuestra comunidad',
     'hero.paragraph': 'El conocimiento se multiplica cuando lo compartimos',
@@ -95,7 +95,7 @@ export const ui = {
     'footer.title.developers': 'Developers',
     'footer.title.viewers': 'Viewers',
     // hero ->
-    'hero.welcome': 'Welcome to Afordin',
+    'hero.welcome': 'Welcome to ',
     'hero.title': 'Learn, create and grow',
     'hero.title.second': 'in our community',
     'hero.paragraph': 'Knowledge multiples when we share it',
