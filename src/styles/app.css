@@ -61,6 +61,12 @@
   --text-button-lg--font-weight: 500;
 }
 
+@layer components {
+  .btn {
+    @apply font-manrope w-fit rounded-full bg-white px-10 py-5 font-medium text-black;
+  }
+}
+
 @keyframes salute {
   0% {
     transform: rotate(0deg);
