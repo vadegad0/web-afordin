@@ -2,6 +2,7 @@
 import SaluteHand from '@/components/SaluteHand.astro'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 import { buttonStyles } from './ui/button.styles'
+import Link from '@/components/Link.astro'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -22,9 +23,9 @@ const t = useTranslations(lang)
     <h1 class="text-hero-title font-bold">{t('hero.title')} <br /> {t('hero.title.second')}</h1>
     <p class="text-hero-paragraph">{t('hero.paragraph')}</p>
   </hgroup>
-  <a target="_blank" class={buttonStyles} href="https://lenguajehtml.com/html/semantica/etiqueta-html-h1/"
-    >{t('hero.button')}</a
-  >
+  <Link external to="https://lenguajehtml.com/html/semantica/etiqueta-html-h1/" class={buttonStyles}>
+    {t('hero.button')}
+  </Link>
   <video
     class="pointer-events-none absolute top-0 left-0 -z-10 aspect-video w-full"
     src="/media/header.webm"
