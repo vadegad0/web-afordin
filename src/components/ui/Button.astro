@@ -1,13 +1,11 @@
 ---
-import { cn } from '@/utils/cn'
-import { buttonStyles } from './button.styles'
+import type { HTMLAttributes } from 'astro/types'
 
-type Props = {
-  classNames: string
-}
-const { classNames } = Astro.props
+export interface ButtonProps extends HTMLAttributes<'button'> {}
+
+const { class: classNames, ...restProps } = Astro.props
 ---
 
-<button class={cn(buttonStyles, classNames)} {...Astro.props}>
+<button class:list={['btn', classNames]} {...restProps}>
   <slot />
 </button>

@@ -1,7 +1,6 @@
 ---
 import mods from '../data/contributors/mods.json'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
-import { buttonStyles } from './ui/button.styles'
 import Link from '@/components/Link.astro'
 
 const lang = getLangFromUrl(Astro.url)
@@ -36,6 +35,6 @@ const t = useTranslations(lang)
   </article>
   <!-- /TODO: Add twitch subs -->
   <div class="flex w-full justify-center">
-    <Link external to="https://discord.com/invite/comuafor" class={buttonStyles}>{t('contributtors.anchor')}</Link>
+    <Link external asButton to="https://discord.com/invite/comuafor">{t('contributtors.anchor')}</Link>
   </div>
 </section>
