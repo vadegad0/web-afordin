@@ -120,7 +120,6 @@
 .scroll-column {
   will-change: transform;
 }
-
 @layer utilities {
   .stroke-animation path {
     stroke-dasharray: 240;
