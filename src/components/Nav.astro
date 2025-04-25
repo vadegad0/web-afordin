@@ -5,7 +5,7 @@ import Github from '../assets/Github.svg?url'
 import Youtube from '../assets/Youtube.svg?url'
 import Twitch from '../assets/Twitch.svg?url'
 import Discord from '../assets/Discord.svg?url'
-import Logo from '../assets/Logo.svg?url'
+import LogoIcon from '../components/ui/LogoIcon.astro'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -65,7 +65,7 @@ const socialLinks = [
   >
     <div>
       <Link to="/">
-        <img src={Logo} alt="Logo de Afordin" class="h-9" />
+        <LogoIcon />
       </Link>
     </div>
     <div class="flex lg:hidden">
