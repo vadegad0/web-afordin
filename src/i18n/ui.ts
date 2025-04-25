@@ -57,11 +57,13 @@ export const ui = {
     // values
     'values.title': 'Nuestros valores',
     'values.section.free.learning': 'Aprendizaje libre',
-    'values.section.free.learning.paragraph': '',
+    'values.section.free.learning.paragraph':
+      'Poder aprender sin la presión de un entorno laboral. Nos adaptamos a la comunidad.',
     'values.section.shared.learning': 'Conocimiento compartido',
-    'values.section.shared.learning.paragraph': '',
-    'values.section.safe.overcoming': 'Superacion segura',
-    'values.section.safe.overcoming.paragraph': '',
+    'values.section.shared.learning.paragraph': 'Los que más saben enseñan a los que menos, pero todos aportan valor.',
+    'values.section.safe.overcoming': 'Superación segura',
+    'values.section.safe.overcoming.paragraph': 'Superar tus límites en un entorno controlado, a tu propio ritmo',
+    'values.button': 'Únete a la comunidad',
     // Last Project
     'lastProject.title': 'Nuestros últimos proyectos',
     'lastProject.paragraph': 'Todo el mundo participa, independientemente de su nivel.',
@@ -103,11 +105,15 @@ export const ui = {
     // values
     'values.title': 'Our Values',
     'values.section.free.learning': 'Free learning',
-    'values.section.free.learning.paragraph': '',
+    'values.section.free.learning.paragraph':
+      'The ability to learn without the pressure of a work environment. We adapt to the needs of the community.',
     'values.section.shared.learning': 'Shared learning',
-    'values.section.shared.learning.paragraph': '',
+    'values.section.shared.learning.paragraph':
+      'The most knowledgeable teach those with less experience, yet everyone brings something valuable to the table.',
     'values.section.safe.overcoming': 'Safe overcoming',
-    'values.section.safe.overcoming.paragraph': '',
+    'values.section.safe.overcoming.paragraph':
+      'Surpass your limits within a controlled setting, progressing at your own pace.',
+    'values.button': 'Join the community',
     // Last Project
     'lastProject.title': 'Our latest projects',
     'lastProject.paragraph': 'Everyone participates, regardless of their level.',
