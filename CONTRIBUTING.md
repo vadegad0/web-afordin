@@ -121,7 +121,15 @@ This helps avoid merge conflicts in your PR:
 git rebase main
 ```
 
-### 8. Push Your Branch
+### 8. (Optional) Pop Your Stashed Changes Back
+
+If you stashed earlier:
+
+```bash
+git stash pop
+```
+
+### 9. Push Your Branch
 
 Push your rebased branch to your forked repo:
 
@@ -135,7 +143,7 @@ If you rebased and already had pushed before, you may need to force push:
 git push origin your-branch --force
 ```
 
-### 9. Compare and Pull Request
+### 10. Compare and Pull Request
 
 Go to your fork on GitHub, and you should see a "Compare & pull request" button.
 Click it, add a clear title and description for your PR, then submit it.
