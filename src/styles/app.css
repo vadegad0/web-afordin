@@ -120,6 +120,7 @@
 .scroll-column {
   will-change: transform;
 }
+
 @layer utilities {
   .stroke-animation path {
     stroke-dasharray: 240;
@@ -309,4 +310,4 @@
 .svg-elem-1 {
   -webkit-animation: animate-svg-fill-1 0.9s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.9s both;
   animation: animate-svg-fill-1 0.9s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.9s both;
-}
+
