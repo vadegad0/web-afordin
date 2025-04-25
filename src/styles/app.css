@@ -160,3 +160,11 @@
 .scroll-column {
   will-change: transform;
 }
+
+.card {
+  @apply mx-auto flex h-auto max-h-[494px] w-full max-w-[417.5px] flex-col rounded-xl border border-white/10 p-6 text-left shadow-lg backdrop-blur-md;
+}
+
+.card img {
+  @apply mx-auto w-auto object-contain;
+}
