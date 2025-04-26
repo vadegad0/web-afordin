@@ -64,7 +64,7 @@ const socialLinks = [
     class="mt-6 flex items-center justify-between gap-6 rounded-full border border-orange-600/20 bg-gradient-to-br from-white/15 to-white/0 px-8 py-4 shadow-lg backdrop-blur-md transition-all duration-300 ease-in-out"
   >
     <div>
-      <Link to="/">
+      <Link to="/" aria-label="Afordin Logo">
         <LogoIcon />
       </Link>
     </div>
@@ -114,11 +114,9 @@ const socialLinks = [
 
   <!-- Mobile menu -->
   <div
-    class="pointer-events-none fixed inset-0 z-50 flex transform items-center justify-center opacity-0 transition-all duration-50 lg:hidden"
     id="mobile-menu"
-    aria-modal="true"
     aria-label="Sections"
-    class="pointer-events-none mx-auto mt-2 max-w-[95%] scale-95 transform opacity-0 transition-all duration-50 lg:hidden"
+    class="pointer-events-none fixed inset-0 z-50 flex transform items-center justify-center opacity-0 transition-all duration-50 lg:hidden"
   >
     <div
       class="flex h-screen w-full flex-col gap-4 bg-gradient-to-br from-purple-950/80 to-black shadow-lg backdrop-blur-md"
