@@ -11,12 +11,16 @@ const firstRow = contributors?.slice(0, Math.ceil(contributors.length / 2))
 const secondRow = contributors?.slice(Math.ceil(contributors.length / 2))
 ---
 
-<div class="flex h-full w-fit flex-wrap items-center justify-center -space-x-3 hover:space-x-0 lg:justify-end">
+<div class="flex h-full w-fit flex-wrap items-center justify-center -space-x-2 lg:justify-end">
   {
     firstRow?.map((contributor: Contributor) => {
       return (
         <a href={contributor.html_url} class="group relative transform transition-all duration-500 ease-in-out">
-          <img src={contributor.avatar_url} alt={contributor.login} class="h-11 w-11 rounded-full shadow-inner" />
+          <img
+            src={contributor.avatar_url}
+            alt={contributor.login}
+            class="h-11 w-11 rounded-full border border-white object-cover shadow-inner transition-transform duration-200 group-hover:relative group-hover:z-10 group-hover:scale-115"
+          />
           <div class="hidden group-hover:block">
             <div class="group absolute -top-12 left-1/2 z-50 flex -translate-x-1/2 flex-col items-center rounded-sm px-3 py-[6px] text-center text-sm font-semibold text-[#111111] before:-top-2">
               <div class="flex items-center gap-1 rounded-sm bg-white px-3 py-[6px]">
@@ -40,7 +44,7 @@ const secondRow = contributors?.slice(Math.ceil(contributors.length / 2))
   }
 </div>
 
-<div class="flex h-full w-fit flex-wrap items-center justify-center -space-x-3 hover:space-x-0 lg:justify-end">
+<div class="flex h-full w-fit flex-wrap items-center justify-center -space-x-2 lg:justify-end">
   {
     secondRow?.map((contributor: Contributor) => {
       return (
@@ -49,7 +53,11 @@ const secondRow = contributors?.slice(Math.ceil(contributors.length / 2))
           to={contributor.html_url}
           class="group relative transform transition-all duration-500 ease-in-out"
         >
-          <img src={contributor.avatar_url} alt={contributor.login} class="h-11 w-11 rounded-full shadow-inner" />
+          <img
+            src={contributor.avatar_url}
+            alt={contributor.login}
+            class="h-11 w-11 rounded-full border border-white object-cover shadow-inner transition-transform duration-200 group-hover:relative group-hover:z-10 group-hover:scale-115"
+          />
           <div class="hidden group-hover:block">
             <div class="group absolute -top-12 left-1/2 z-50 flex -translate-x-1/2 flex-col items-center rounded-sm px-3 py-[6px] text-center text-sm font-semibold text-[#111111] before:-top-2">
               <div class="flex items-center gap-1 rounded-sm bg-white px-3 py-[6px]">
