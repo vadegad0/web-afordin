@@ -150,11 +150,16 @@ const socialLinks = [
         <div>
           <span>Diseñado y desarrollado por Comuafor ❤️</span>
         </div>
+        <!-- Render social media icons (Github, Discord, YouTube, Twitch) in mobile menu -->
         <div class="flex flex-row items-center justify-center gap-6">
           {
             socialLinks.map(({ icon: Icon, name, to }) => (
               <Link to={to} external class="inline-block transition-transform duration-300 hover:scale-110">
-                <Icon class="h-6 w-6" alt={`Icono de ${name}`} />
+                {typeof Icon === 'string' ? (
+                  <img src={Icon} alt={`Icono de ${name}`} class="h-6 w-6" />
+                ) : (
+                  <Icon class="h-6 w-6" />
+                )}
               </Link>
             ))
           }
