@@ -1,4 +1,5 @@
 ---
+import type { contributorsIcons } from '@/types'
 import Link from '@/components/Link.astro'
 import LinkedIn from '@/assets/LinkedIn.svg'
 import GitHub from '@/assets/Github.svg'
@@ -7,7 +8,7 @@ interface Props {
   url: string
   avatar: string
   username: string
-  icon: 'linkedin' | 'github'
+  icon: contributorsIcons
 }
 
 const { url, avatar, username, icon } = Astro.props
