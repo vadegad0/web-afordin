@@ -1,10 +1,10 @@
 ---
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 import Link from '@/components/Link.astro'
-import Github from '../assets/Github.svg?url'
 import Youtube from '../assets/Youtube.svg?url'
 import Twitch from '../assets/Twitch.svg?url'
-import Discord from '../assets/Discord.svg?url'
+import Github from '../components/ui/GitHubIcon.astro'
+import Discord from '../components/ui/DiscordIcon.astro'
 import LogoIcon from '../components/ui/LogoIcon.astro'
 
 const lang = getLangFromUrl(Astro.url)
@@ -101,13 +101,11 @@ const socialLinks = [
     <!-- Social media icons for large screens -->
     <div class="hidden items-center justify-center gap-4 lg:flex">
       {
-        socialLinks
-          .filter((link) => link.name === 'github' || link.name === 'discord')
-          .map(({ icon, name, to }) => (
-            <Link external {to} class="inline-block transition-transform duration-300 hover:scale-110">
-              <img src={icon} alt={`Icono de ${name}`} class="size-6" />
-            </Link>
-          ))
+        socialLinks.map(({ icon: Icon, to }) => (
+          <Link to={to} external class="inline-block transition-transform duration-300 hover:scale-110">
+            <Icon class="h-6 w-6" />
+          </Link>
+        ))
       }
     </div>
   </nav>
@@ -138,7 +136,7 @@ const socialLinks = [
         {
           links.map(({ name, to }) => (
             <Link
-              {to}
+              to={to}
               class="relative text-xl font-semibold text-white after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full"
             >
               {name}
@@ -151,11 +149,16 @@ const socialLinks = [
         <div>
           <span>Diseñado y desarrollado por Comuafor ❤️</span>
         </div>
+        <!-- Render social media icons (Github, Discord, YouTube, Twitch) in mobile menu -->
         <div class="flex flex-row items-center justify-center gap-6">
           {
-            socialLinks.map(({ icon, name, to }) => (
-              <Link {to} external class="inline-block transition-transform duration-300 hover:scale-110">
-                <img src={icon} alt={`Icono de ${name}`} class="size-8" />
+            socialLinks.map(({ icon: Icon, name, to }) => (
+              <Link to={to} external class="inline-block transition-transform duration-300 hover:scale-110">
+                {typeof Icon === 'string' ? (
+                  <img src={Icon} alt={`Icono de ${name}`} class="h-6 w-6" />
+                ) : (
+                  <Icon class="h-6 w-6" />
+                )}
               </Link>
             ))
           }

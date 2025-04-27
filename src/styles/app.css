@@ -189,64 +189,8 @@
     fill: rgb(255, 255, 255);
   }
 }
-
-/*animation*/
-.svg-elem-1 {
-  -webkit-animation: animate-svg-fill-1 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s both;
-  animation: animate-svg-fill-1 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.8s both;
-}
-
-@-webkit-keyframes animate-svg-fill-2 {
-  0% {
-    fill: transparent;
-  }
-
-  100% {
-    fill: rgb(255, 255, 255);
-  }
-}
-
-@keyframes animate-svg-fill-2 {
-  0% {
-    fill: transparent;
-  }
-
-  100% {
-    fill: rgb(255, 255, 255);
-  }
-}
-
-.svg-elem-2 {
-  -webkit-animation: animate-svg-fill-2 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s both;
-  animation: animate-svg-fill-2 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.9s both;
-}
-
-@-webkit-keyframes animate-svg-fill-3 {
-  0% {
-    fill: transparent;
-  }
-
-  100% {
-    fill: rgb(255, 255, 255);
-  }
-}
-
-@keyframes animate-svg-fill-3 {
-  0% {
-    fill: transparent;
-  }
-
-  100% {
-    fill: rgb(255, 255, 255);
-  }
-}
-
-.svg-elem-3 {
-  -webkit-animation: animate-svg-fill-3 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 1s both;
-  animation: animate-svg-fill-3 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 1s both;
-}
-
-@-webkit-keyframes animate-svg-fill-4 {
+/* General fill animation SVG'S */
+@keyframes animate-svg-fill {
   0% {
     fill: transparent;
   }
@@ -266,82 +210,30 @@
   }
 }
 
+/* Apply animation to all svg elements */
+.svg-elem-1,
+.svg-elem-2,
+.svg-elem-3,
 .svg-elem-4 {
-  -webkit-animation: animate-svg-fill-4 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 1.1s both;
-  animation: animate-svg-fill-4 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 1.1s both;
+  animation: animate-svg-fill 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 
-@-webkit-keyframes animate-svg-fill-1 {
-  0% {
-    fill: transparent;
-  }
-
-  100% {
-    fill: rgb(255, 255, 255);
-  }
-}
-
-@keyframes animate-svg-fill-1 {
-  0% {
-    fill: transparent;
-  }
-
-  100% {
-    fill: rgb(255, 255, 255);
-  }
-}
-
+/* Delay different animations for each element */
 .svg-elem-1 {
-  -webkit-animation: animate-svg-fill-1 0.9s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.9s both;
-  animation: animate-svg-fill-1 0.9s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.9s both;
+  animation-delay: 0.8s;
 }
 
-@-webkit-keyframes animate-svg-fill-1 {
-  0% {
-    fill: transparent;
-  }
-
-  100% {
-    fill: rgb(255, 255, 255);
-  }
+.svg-elem-2 {
+  animation-delay: 0.8s;
 }
 
-@keyframes animate-svg-fill-1 {
-  0% {
-    fill: transparent;
-  }
-
-  100% {
-    fill: rgb(255, 255, 255);
-  }
+.svg-elem-3 {
+  animation-delay: 1s;
 }
 
-/* add svg animation */
-.svg-elem-1 {
-  -webkit-animation: animate-svg-fill-1 0.9s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.9s both;
-  animation: animate-svg-fill-1 0.9s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.9s both;
+.svg-elem-4 {
+  animation-delay: 1.1s;
 }
-
-@-webkit-keyframes animate-svg-fill-1 {
-  0% {
-    fill: transparent;
-  }
-
-  100% {
-    fill: rgb(255, 255, 255);
-  }
-}
-
-@keyframes animate-svg-fill-1 {
-  0% {
-    fill: transparent;
-  }
-
-  100% {
-    fill: rgb(255, 255, 255);
-  }
-}
-
 .svg-elem-1 {
   -webkit-animation: animate-svg-fill-1 0.9s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.9s both;
   animation: animate-svg-fill-1 0.9s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.9s both;
