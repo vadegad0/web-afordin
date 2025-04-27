@@ -1,28 +1,27 @@
 ---
-import type { Contributor } from '@/types/index.d'
-import Avatar from './ui/Avatar.astro'
+import type { Contributor, contributorsIcons } from '@/types/index.d'
+import Avatar from '@/components/ui/Avatar.astro'
 
 interface Props {
   contributors: Array<Contributor>
 }
 
 const { contributors } = Astro.props
-const firstRow = contributors?.slice(0, Math.ceil(contributors.length / 2))
-const secondRow = contributors?.slice(Math.ceil(contributors.length / 2))
 ---
 
-<div class="flex h-full w-fit flex-wrap items-center justify-center -space-x-2 lg:justify-end">
+<div
+  class="flex h-full w-fit max-w-72 flex-wrap items-center justify-center -space-x-2 gap-y-3.5 md:max-w-96 lg:justify-end"
+>
   {
-    firstRow?.map(({ html_url, avatar_url, login }: Contributor) => {
-      return <Avatar url={html_url} avatar={avatar_url} username={login} icon="github" />
-    })
-  }
-</div>
+    contributors?.map((contributors: Contributor) => {
+      const { html_url, avatar_url, login } = contributors
+      let icon: contributorsIcons = 'linkedin'
 
-<div class="flex h-full w-fit flex-wrap items-center justify-center -space-x-2 lg:justify-end">
-  {
-    secondRow?.map(({ html_url, avatar_url, login }: Contributor) => {
-      return <Avatar url={html_url} avatar={avatar_url} username={login} icon="github" />
+      if (contributors.hasOwnProperty('id')) {
+        icon = 'github'
+      }
+
+      return <Avatar url={html_url} avatar={avatar_url} username={login} icon={icon} />
     })
   }
 </div>
