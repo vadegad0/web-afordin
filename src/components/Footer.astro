@@ -1,6 +1,5 @@
 ---
 import FooterContributors from './FooterContributors.astro'
-import FooterDesignersContributors from './FooterDesignersContributors.astro'
 import type { Contributor } from '@/types/index.d'
 import { fetchGithub } from '../utils/fetchGithub'
 import { designersData } from '@/data/designersData'
@@ -112,7 +111,7 @@ const links = [
       <div class="flex flex-col gap-6">
         <div class="contend-end flex flex-col items-center gap-4 lg:items-end">
           <h3 class="text-base">{t('footer.title.designer')}</h3>
-          <FooterDesignersContributors contributors={designersData} />
+          <FooterContributors contributors={designersData} />
         </div>
         <div class="contend-end flex flex-col items-center gap-4 lg:items-end">
           <h3 class="text-base">{t('footer.title.developers')}</h3>
