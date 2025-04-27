@@ -13,7 +13,7 @@ interface Props {
 
 const { url, avatar, username, icon } = Astro.props
 
-const icons = {
+const AVATARS_CONFIG = {
   linkedin: {
     component: LinkedIn,
     colors: 'bg-[#0072B1] text-white',
@@ -26,7 +26,7 @@ const icons = {
   },
 }
 
-const { component: Icon, colors, borderTop } = icons[icon]
+const { component: Icon, colors, borderTop } = AVATARS_CONFIG[icon]
 ---
 
 <Link class="group relative transform transition-all duration-500 ease-in-out" to={url} external>
