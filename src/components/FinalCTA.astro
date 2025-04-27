@@ -3,11 +3,11 @@ import Link from './Link.astro'
 ---
 
 <section class="relative z-10 mt-24 flex aspect-video w-full flex-col items-center gap-10 text-center">
-  <hgroup class="flex flex-col items-center gap-4 pt-[236px]">
+  <hgroup class="flex flex-col items-center gap-4 pt-[236px] text-shadow-lg/20">
     <h2 class="font-calsans text-7xl tracking-[2.5px]">¿A qué estás esperando?</h2>
     <p class="text-xl">Descubre lo que podemos crear juntos</p>
   </hgroup>
-  <Link external asButton to="https://discord.com/invite/comuafor">¡Empezar a crear!</Link>
+  <Link class="shadow-md/25" external asButton to="https://discord.com/invite/comuafor">¡Empezar a crear!</Link>
   <video
     class="pointer-events-none absolute top-0 left-0 -z-10 aspect-video w-full"
     src="/media/footer.webm"
