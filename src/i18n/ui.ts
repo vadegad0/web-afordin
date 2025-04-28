@@ -3,8 +3,7 @@ import type { KeyLang, KeyTranslation, UI } from './types.d'
 export const languages = {
   es: 'Español',
   en: 'English',
-  // add more languages here
-  // ca: 'Catalan'
+  ca: 'Catalan',
 }
 
 /**
@@ -118,5 +117,53 @@ export const ui = {
     'lastProject.title': 'Our latest projects',
     'lastProject.paragraph': 'Everyone participates, regardless of their level.',
     'lastProject.anchor': 'Start contributing',
+  },
+  ca: {
+    // community
+    'community.title': 'Comunitat',
+    'community.paragraph': 'Connecta, col·labora i troba suport en cada pas del teu camí.',
+    'community.button': 'Coneix-nos',
+    // contributtors
+    'contributtors.title': 'Els nostres meravellosos patrocinadors',
+    'contributtors.paragraph': 'Gràcies a tothom que ho fa possible amb el seu suport constant.',
+    'contributtors.anchor': 'Coneix-nos',
+    // nav
+    'nav.home': 'Inici',
+    'nav.values': 'Valors',
+    'nav.projects': 'Projectes',
+    'nav.events': 'Esdeveniments',
+    'nav.contributor': 'Contribuents',
+    // footer
+    'footer.ul.home': 'Inici',
+    'footer.ul.ourValues': 'Els nostres valors',
+    'footer.ul.aboutUs': 'Sobre nosaltres',
+    'footer.ul.events': 'Esdeveniments',
+    'footer.ul.community': 'Comunitat',
+    'footer.ul.sponsors': 'Patrocinadors',
+    'footer.paragraph.designed': 'Dissenyat i desenvolupat per',
+    'footer.title': 'Qui ha contribuït?',
+    'footer.title.designer': 'Disseny',
+    'footer.title.developers': 'Desenvolupament',
+    'footer.title.viewers': 'Espectadors',
+    // hero
+    'hero.welcome': 'Benvingut/da a ',
+    'hero.title': 'Aprèn, crea i creix',
+    'hero.title.second': 'a la nostra comunitat',
+    'hero.paragraph': 'El coneixement es multiplica quan el compartim',
+    'hero.button': 'Creix compartint',
+    // values
+    'values.title': 'Els nostres valors',
+    'values.section.free.learning': 'Aprenentatge lliure',
+    'values.section.free.learning.paragraph':
+      "Poder aprendre sense la pressió d'un entorn laboral. Ens adaptem a la comunitat.",
+    'values.section.shared.learning': 'Coneixement compartit',
+    'values.section.shared.learning.paragraph': 'Els que més saben ensenyen als que menys, però tothom aporta valor.',
+    'values.section.safe.overcoming': 'Superació segura',
+    'values.section.safe.overcoming.paragraph': 'Superar els teus límits en un entorn controlat, al teu propi ritme',
+    'values.button': 'Uneix-te a la comunitat',
+    // Last Project
+    'lastProject.title': 'Els nostres últims projectes',
+    'lastProject.paragraph': 'Tothom participa, independentment del seu nivell.',
+    'lastProject.anchor': 'Comença a contribuir',
   },
 } as const satisfies UI<KeyLang, KeyTranslation>
