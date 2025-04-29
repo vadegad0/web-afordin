@@ -12,7 +12,7 @@ const t = useTranslations(lang)
     class="pointer-events-none absolute inset-0 h-full w-full bg-linear-to-b from-transparent from-65% to-[#100E14] to-95%"
   >
   </div>
-  <div class="rounded-full bg-linear-(--gradient-rainbow) p-[2px] animation">
+  <div class="animation rounded-full bg-linear-(--gradient-rainbow) p-[2px]">
     <div class="group flex items-center gap-3 rounded-full bg-[#100d13] px-5 py-1 text-base">
       <p class="font-manrope font-medium">{t('hero.welcome')} <span class="font-bold">Afordin</span></p>
       <SaluteHand extraClass="group-hover:animate-salute" />
@@ -43,15 +43,18 @@ const t = useTranslations(lang)
   section {
     mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
   }
-  
+
   @keyframes tag-animation {
-    0% { background-position: 50%; }
-    100% { background-position: 200% 50%; }
+    0% {
+      background-position: 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
   }
-  
+
   .animation {
     background-size: 300% 300%;
     animation: tag-animation 4s linear infinite;
   }
-
 </style>
