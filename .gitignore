@@ -28,3 +28,11 @@ pnpm-debug.log*
 
 # eslint cache
 .eslintcache
+
+# node.js
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# bun
+bun.lockb

@@ -23,11 +23,12 @@ const lang = getLangFromUrl(Astro.url)
   </head>
   <body class="relative">
     <SquarePattern />
-    <div class="flex w-full flex-col items-center bg-[var(--color-primary)] text-white">
+    <div class="font-manrope flex w-full flex-col items-center bg-[var(--color-primary)] text-white">
       <slot />
     </div>
   </body>
 </html>
+
 
 <style is:global>
   @font-face {
