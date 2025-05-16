@@ -1,0 +1,40 @@
+---
+// Astro components
+import Layout from '@/layouts/Layout.astro'
+import Nav from '@/components/Nav.astro'
+import Button from '@/components/ui/Button.astro'
+---
+
+<Layout title="Afordin Community" description="Que un copywriter se haga una descripción muy chula">
+  <Nav />
+  <section
+    id="404"
+    class="relative z-20 flex min-h-screen w-full flex-col items-center justify-center gap-11 overflow-hidden"
+  >
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      id="video-404"
+      preload="metadata"
+      class="pointer-events-none absolute top-0 left-0 -z-10 h-full w-full object-cover"
+    >
+      <source src="/media/video-404.webm" type="video/webm" />
+    </video>
+    <h1 class="text-4xl leading-tight font-bold md:text-6xl">No encontramos la página :(</h1>
+    <p class="text-lg">Pero podemos decirte qué carpincho sos según tu signo</p>
+    <div class="mt-4 flex-col items-center gap-4 sm:flex-row">
+      <input type="text" placeholder="Tu signo" class="w-48 rounded-full px-4 py-2 text-black sm:w-auto" />
+      <Button> Ver Carpincho </Button>
+    </div>
+
+    <div class="mt-8 flex max-w-5xl flex-wrap items-end justify-center gap-6">
+      <img src="/media/carpincho-1.png" alt="Carpincho 1" class="w-32 md:w-40" />
+      <img src="/media/carpincho-2.png" alt="Carpincho 2" class="w-32 md:w-40" />
+      <img src="/media/carpincho-3.png" alt="Carpincho 3" class="w-32 md:w-40" />
+      <img src="/media/carpincho-4.png" alt="Carpincho 4" class="w-32 md:w-40" />
+      <img src="/media/carpincho-5.png" alt="Carpincho 5" class="w-32 md:w-40" />
+    </div>
+  </section>
+</Layout>
